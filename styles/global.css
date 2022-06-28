@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css');
 
 @tailwind base;
 @tailwind components;
@@ -107,7 +106,7 @@
 
   --fw-light: 300;
   --fw-regular: 400;
-  --fw-medium: 400;
+  --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
   --fw-extrabold: 800;
@@ -138,6 +137,7 @@
 }
 
 * {
+  box-sizing: border-box;
   word-break: break-word;
 }
 
