@@ -45,6 +45,15 @@ module.exports = {
       black: 'var(--fw-black)',
     },
     extend: {
+      boxShadow: {
+        xs: 'var(--shadow-xs)',
+        sm: 'var(--shadow-sm)',
+        md: 'var(--shadow-md)',
+        lg: 'var(--shadow-lg)',
+        xl: 'var(--shadow-xl)',
+        '2xl': 'var(--shadow-2xl)',
+        '3xl': 'var(--shadow-3xl)',
+      },
       colors: {
         white: 'rgb(var(--white) / <alpha-value>)',
         black: 'rgb(var(--black) / <alpha-value>)',
@@ -114,8 +123,19 @@ module.exports = {
           900: 'rgb(var(--green-900) / <alpha-value>)',
         },
       },
-      width: {},
-      height: {},
+      width: {
+        toggle:
+          'calc(var(--toggle-switch-size) * 2 + var(--toggle-switch-spacing) * 2)',
+        'toggle-switch': 'var(--toggle-switch-size)',
+      },
+      height: {
+        toggle:
+          'calc(var(--toggle-switch-size) + var(--toggle-switch-spacing) * 2)',
+        'toggle-switch': 'var(--toggle-switch-size)',
+      },
+      spacing: {
+        toggle: 'var(--toggle-switch-spacing)',
+      },
       zIndex: {
         negative: 'var(--z-negative)',
         elevate: 'var(--z-elevate)',
