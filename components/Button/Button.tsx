@@ -6,7 +6,13 @@ type ButtonTypes = 'button' | 'submit' | 'reset'
 
 type ButtonSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 
-type ButtonColors = 'primary' | 'gray' | 'blue' | 'red' | 'yellow' | 'green'
+type ButtonColors =
+  | 'primary'
+  | 'gray'
+  | 'info'
+  | 'error'
+  | 'warning'
+  | 'success'
 
 type ButtonVariants =
   | 'contained'
@@ -82,53 +88,53 @@ const buttonStyles = {
     text: 'bg-white text-gray-700 outline-white enabled:hover:outline-gray-50 enabled:hover:bg-gray-50 disabled:text-gray-300',
     link: 'bg-white text-gray-700 outline-white enabled:hover:underline disabled:text-gray-300',
   },
-  blue: {
+  info: {
     contained:
-      'bg-blue-700 text-white outline-blue-700 enabled:hover:bg-blue-800 enabeld:hover:outline-blue-800 disabled:bg-blue-200 disabled:outline-blue-200',
+      'bg-info-700 text-white outline-info-700 enabled:hover:bg-info-800 enabeld:hover:outline-info-800 disabled:bg-info-200 disabled:outline-info-200',
     gradient:
-      'enabled:bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-blue-200 disabled:outline-blue-200',
+      'enabled:bg-gradient-to-r from-info-700 via-info-500 to-info-700 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-info-200 disabled:outline-info-200',
     light:
-      'bg-blue-50 text-blue-500 outline-blue-50 enabled:hover:bg-blue-100 enabled:hover:outline-blue-100 disabled:bg-blue-25 disabled:outline-blue-25 disabled:text-blue-300',
+      'bg-info-50 text-info-500 outline-info-50 enabled:hover:bg-info-100 enabled:hover:outline-info-100 disabled:bg-info-25 disabled:outline-info-25 disabled:text-info-300',
     outlined:
-      'bg-white text-blue-600 outline-blue-500 enabled:hover:bg-blue-50 disabled:outline-blue-200 disabled:text-blue-300',
-    text: 'bg-white text-blue-600 outline-white enabled:hover:outline-blue-50 enabled:hover:bg-blue-50 disabled:text-gray-300',
-    link: 'bg-white text-blue-600 outline-white enabled:hover:underline disabled:text-gray-300',
+      'bg-white text-info-600 outline-info-500 enabled:hover:bg-info-50 disabled:outline-info-200 disabled:text-info-300',
+    text: 'bg-white text-info-600 outline-white enabled:hover:outline-info-50 enabled:hover:bg-info-50 disabled:text-gray-300',
+    link: 'bg-white text-info-600 outline-white enabled:hover:underline disabled:text-gray-300',
   },
-  red: {
+  error: {
     contained:
-      'bg-red-600 text-white outline-red-600 enabled:hover:bg-red-700 enabeld:hover:outline-red-700 disabled:bg-red-200 disabled:outline-red-200',
+      'bg-error-600 text-white outline-error-600 enabled:hover:bg-error-700 enabeld:hover:outline-error-700 disabled:bg-error-200 disabled:outline-error-200',
     gradient:
-      'enabled:bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-red-200 disabled:outline-red-200',
+      'enabled:bg-gradient-to-r from-error-600 via-error-500 to-error-600 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-error-200 disabled:outline-error-200',
     light:
-      'bg-red-50 text-red-700 outline-red-50 enabled:hover:bg-red-100 enabled:hover:outline-red-100 disabled:bg-red-25 disabled:outline-red-25 disabled:text-red-300',
+      'bg-error-50 text-error-700 outline-error-50 enabled:hover:bg-error-100 enabled:hover:outline-error-100 disabled:bg-error-25 disabled:outline-error-25 disabled:text-error-300',
     outlined:
-      'bg-white text-red-700 outline-red-500 enabled:hover:bg-red-50 disabled:outline-red-200 disabled:text-red-300',
-    text: 'bg-white text-red-700 outline-white enabled:hover:outline-red-50 enabled:hover:bg-red-50 disabled:text-gray-300',
-    link: 'bg-white text-red-700 outline-white enabled:hover:underline disabled:text-gray-300',
+      'bg-white text-error-700 outline-error-500 enabled:hover:bg-error-50 disabled:outline-error-200 disabled:text-error-300',
+    text: 'bg-white text-error-700 outline-white enabled:hover:outline-error-50 enabled:hover:bg-error-50 disabled:text-gray-300',
+    link: 'bg-white text-error-700 outline-white enabled:hover:underline disabled:text-gray-300',
   },
-  yellow: {
+  warning: {
     contained:
-      'bg-yellow-500 text-white outline-yellow-500 enabled:hover:bg-yellow-600 enabeld:hover:outline-yellow-600 disabled:bg-yellow-200 disabled:outline-yellow-200',
+      'bg-warning-500 text-white outline-warning-500 enabled:hover:bg-warning-600 enabeld:hover:outline-warning-600 disabled:bg-warning-200 disabled:outline-warning-200',
     gradient:
-      'enabled:bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-yellow-200 disabled:outline-yellow-200',
+      'enabled:bg-gradient-to-r from-warning-500 via-warning-400 to-warning-500 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-warning-200 disabled:outline-warning-200',
     light:
-      'bg-yellow-50 text-yellow-600 outline-yellow-50 enabled:hover:bg-yellow-100 enabled:hover:outline-yellow-100 disabled:bg-yellow-25 disabled:outline-yellow-25 disabled:text-yellow-200',
+      'bg-warning-50 text-warning-600 outline-warning-50 enabled:hover:bg-warning-100 enabled:hover:outline-warning-100 disabled:bg-warning-25 disabled:outline-warning-25 disabled:text-warning-200',
     outlined:
-      'bg-white text-yellow-600 outline-yellow-400 enabled:hover:bg-yellow-50 disabled:outline-yellow-100 disabled:text-yellow-200',
-    text: 'bg-white text-yellow-600 outline-white enabled:hover:outline-yellow-50 enabled:hover:bg-yellow-50 disabled:text-gray-300',
-    link: 'bg-white text-yellow-600 outline-white enabled:hover:underline disabled:text-gray-300',
+      'bg-white text-warning-600 outline-warning-400 enabled:hover:bg-warning-50 disabled:outline-warning-100 disabled:text-warning-200',
+    text: 'bg-white text-warning-600 outline-white enabled:hover:outline-warning-50 enabled:hover:bg-warning-50 disabled:text-gray-300',
+    link: 'bg-white text-warning-600 outline-white enabled:hover:underline disabled:text-gray-300',
   },
-  green: {
+  success: {
     contained:
-      'bg-green-600 text-white outline-green-600 enabled:hover:bg-green-700 enabeld:hover:outline-green-700 disabled:bg-green-200 disabled:outline-green-200',
+      'bg-success-600 text-white outline-success-600 enabled:hover:bg-success-700 enabeld:hover:outline-success-700 disabled:bg-success-200 disabled:outline-success-200',
     gradient:
-      'enabled:bg-gradient-to-r from-green-600 via-green-500 to-green-600 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-green-200 disabled:outline-green-200',
+      'enabled:bg-gradient-to-r from-success-600 via-success-500 to-success-600 bg-[length:200%_auto] text-white outline-transparent enabled:hover:bg-[right_100%] disabled:bg-success-200 disabled:outline-success-200',
     light:
-      'bg-green-50 text-green-600 outline-green-50 enabled:hover:bg-green-100 enabled:hover:outline-green-100 disabled:bg-green-25 disabled:outline-green-25 disabled:text-green-300',
+      'bg-success-50 text-success-600 outline-success-50 enabled:hover:bg-success-100 enabled:hover:outline-success-100 disabled:bg-success-25 disabled:outline-success-25 disabled:text-success-300',
     outlined:
-      'bg-white text-green-600 outline-green-500 enabled:hover:bg-green-50 disabled:outline-green-200 disabled:text-green-300',
-    text: 'bg-white text-green-600 outline-white enabled:hover:outline-green-50 enabled:hover:bg-green-50 disabled:text-gray-300',
-    link: 'bg-white text-green-600 outline-white enabled:hover:underline disabled:text-gray-300',
+      'bg-white text-success-600 outline-success-500 enabled:hover:bg-success-50 disabled:outline-success-200 disabled:text-success-300',
+    text: 'bg-white text-success-600 outline-white enabled:hover:outline-success-50 enabled:hover:bg-success-50 disabled:text-gray-300',
+    link: 'bg-white text-success-600 outline-white enabled:hover:underline disabled:text-gray-300',
   },
 }
 
