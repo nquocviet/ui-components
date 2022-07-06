@@ -11,7 +11,7 @@ const icons = {
 }
 
 export default {
-  title: 'Design System/Button',
+  title: 'Design System/Components/Button',
   component: Button,
   argTypes: {
     children: {
@@ -48,10 +48,13 @@ export default {
     color: {
       description: 'The color of the component. It supports by default colors.',
       table: {
-        type: { summary: 'primary | gray | blue | red | yellow | green' },
+        type: { summary: 'primary | gray | info | error | warning | success' },
         defaultValue: { summary: 'primary' },
       },
-      control: { type: 'text' },
+      control: {
+        type: 'select',
+        options: ['primary', 'gray', 'info', 'error', 'warning', 'success'],
+      },
     },
     variant: {
       description: 'The variant to use.',
@@ -209,12 +212,12 @@ Gray.args = {
   onClick: action('clicked'),
 }
 
-export const Blue = Template.bind({})
-Blue.args = {
+export const Info = Template.bind({})
+Info.args = {
   children: 'Button',
   type: 'button',
   size: 'md',
-  color: 'blue',
+  color: 'info',
   variant: 'contained',
   suffix: null,
   prefix: null,
@@ -228,12 +231,12 @@ Blue.args = {
   onClick: action('clicked'),
 }
 
-export const Red = Template.bind({})
-Red.args = {
+export const Error = Template.bind({})
+Error.args = {
   children: 'Button',
   type: 'button',
   size: 'md',
-  color: 'red',
+  color: 'error',
   variant: 'contained',
   suffix: null,
   prefix: null,
@@ -247,12 +250,12 @@ Red.args = {
   onClick: action('clicked'),
 }
 
-export const Yellow = Template.bind({})
-Yellow.args = {
+export const Warning = Template.bind({})
+Warning.args = {
   children: 'Button',
   type: 'button',
   size: 'md',
-  color: 'yellow',
+  color: 'warning',
   variant: 'contained',
   suffix: null,
   prefix: null,
@@ -266,12 +269,12 @@ Yellow.args = {
   onClick: action('clicked'),
 }
 
-export const Green = Template.bind({})
-Green.args = {
+export const Success = Template.bind({})
+Success.args = {
   children: 'Button',
   type: 'button',
   size: 'md',
-  color: 'green',
+  color: 'success',
   variant: 'contained',
   suffix: null,
   prefix: null,
