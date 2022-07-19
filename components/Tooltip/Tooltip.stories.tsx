@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 import { Tooltip } from '@/components/Tooltip'
 import { Button } from '../Button'
 import { Warning } from 'phosphor-react'
@@ -81,7 +80,7 @@ export default {
     docs: {
       description: {
         component:
-          "An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.",
+          'Tooltips display informative text when users hover over an element.',
       },
     },
   },
