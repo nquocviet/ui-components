@@ -99,7 +99,7 @@ export default {
       },
       control: { type: 'text' },
     },
-    position: {
+    placement: {
       description:
         'The position of the component. On smaller screens, the component grows to occupy all the available width, the horizontal alignment is ignored. This behavior is disabled by default when floating is `false`.',
       table: {
@@ -110,6 +110,14 @@ export default {
         defaultValue: { summary: "{ horizontal: 'right', vertical: 'top' }" },
       },
       control: { type: 'object' },
+    },
+    zIndex: {
+      description: 'Config z-index of component.',
+      table: {
+        type: { summary: 'number | null' },
+        defaultValue: { summary: 'null' },
+      },
+      control: { type: 'text' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',
@@ -122,7 +130,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Button component for user interaction.',
+        component:
+          "An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.",
       },
     },
   },
@@ -144,10 +153,11 @@ Primary.args = {
   closeButton: false,
   floating: false,
   autoHideDuration: 0,
-  position: {
+  placement: {
     horizontal: 'right',
     vertical: 'top',
   },
+  zIndex: null,
   className: '',
   onClose: action('closed'),
 }
@@ -166,10 +176,11 @@ Gray.args = {
   closeButton: false,
   floating: false,
   autoHideDuration: 0,
-  position: {
+  placement: {
     horizontal: 'right',
     vertical: 'top',
   },
+  zIndex: null,
   className: '',
   onClose: action('closed'),
 }
@@ -188,10 +199,11 @@ Info.args = {
   closeButton: false,
   floating: false,
   autoHideDuration: 0,
-  position: {
+  placement: {
     horizontal: 'right',
     vertical: 'top',
   },
+  zIndex: null,
   className: '',
   onClose: action('closed'),
 }
@@ -210,10 +222,11 @@ Error.args = {
   closeButton: false,
   floating: false,
   autoHideDuration: 0,
-  position: {
+  placement: {
     horizontal: 'right',
     vertical: 'top',
   },
+  zIndex: null,
   className: '',
   onClose: action('closed'),
 }
@@ -232,10 +245,11 @@ Warning.args = {
   closeButton: false,
   floating: false,
   autoHideDuration: 0,
-  position: {
+  placement: {
     horizontal: 'right',
     vertical: 'top',
   },
+  zIndex: null,
   className: '',
   onClose: action('closed'),
 }
@@ -254,10 +268,11 @@ Success.args = {
   closeButton: false,
   floating: false,
   autoHideDuration: 0,
-  position: {
+  placement: {
     horizontal: 'right',
     vertical: 'top',
   },
+  zIndex: null,
   className: '',
   onClose: action('closed'),
 }

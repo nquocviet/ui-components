@@ -1,44 +1,27 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, ReactNode } from 'react'
 import clsx from 'clsx'
 import { useToggle } from '@/hooks'
+import { styles } from './Toggle.styles'
 
-type ToggleSizes = 'sm' | 'md' | 'lg'
+type TToggleSizes = 'sm' | 'md' | 'lg'
 
-type ToggleThemes = 'light' | 'dark'
+type TToggleThemes = 'light' | 'dark'
 
-type ToggleProps = {
-  size?: ToggleSizes | number
+type TToggleProps = {
+  size?: TToggleSizes | number
   spacing?: number
-  theme?: ToggleThemes
-  label?: string
-  description?: string
+  theme?: TToggleThemes
+  label?: ReactNode
+  description?: ReactNode
   className?: string
-  checked?: boolean
+  defaultChecked?: boolean
   disabled?: boolean
   onChange:
     | (() => void)
     | ((event: React.ChangeEvent<HTMLInputElement>) => void)
 } & React.HTMLAttributes<HTMLInputElement>
 
-const toggleSwitchSizes = {
-  sm: 16,
-  md: 20,
-  lg: 24,
-}
-
-const toggleTextSizes = {
-  sm: 'text-sm',
-  md: 'text-md',
-  lg: 'text-md',
-}
-
-const toggleThemes = {
-  light:
-    'bg-primary-50 hover:bg-primary-100 peer-checked:bg-primary-200 peer-enabled:peer-checked:hover:bg-primary-300',
-  dark: 'bg-gray-100 hover:bg-gray-200 peer-checked:bg-primary-600 peer-enabled:peer-checked:hover:bg-primary-700',
-}
-
-const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
+const Toggle = forwardRef<HTMLInputElement, TToggleProps>(
   (
     {
       size = 'md',
@@ -47,26 +30,22 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
       label,
       description,
       className,
-      checked = false,
+      defaultChecked = false,
       disabled = false,
       onChange,
       ...rest
     },
     ref
   ) => {
-    const [toggle, setToggle] = useToggle(checked)
-    const defaultClassName =
-      'w-toggle h-toggle p-toggle rounded-full cursor-pointer transition-colors peer-disabled:bg-gray-50 peer-disabled:cursor-not-allowed'
-    const allClassNames = clsx(defaultClassName, toggleThemes[theme])
+    const allClassNames = clsx(styles.base, styles.themes[theme])
+    const [toggle, setToggle] = useToggle(defaultChecked)
 
     return (
       <div className={clsx('inline-flex items-start gap-2', className)}>
         <label
           className='inline-block'
           style={{
-            ['--toggle-switch-size' as any]: `${
-              toggleSwitchSizes[size] || size
-            }px`,
+            ['--toggle-switch-size' as any]: `${styles.sizes[size] || size}px`,
             ['--toggle-switch-spacing' as any]: `${spacing}px`,
           }}
         >
@@ -93,12 +72,17 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
             ></div>
           </div>
         </label>
-        <div
-          className={clsx('flex flex-col items-start', toggleTextSizes[size])}
-        >
-          {label && <p className='text-gray-700 font-medium'>{label}</p>}
-          {description && <p className='text-gray-500'>{description}</p>}
-        </div>
+        {label && (
+          <div
+            className={clsx(
+              'flex flex-col items-start',
+              styles.fontSizes[size]
+            )}
+          >
+            {label && <p className='text-gray-700 font-medium'>{label}</p>}
+            {description && <p className='text-gray-500'>{description}</p>}
+          </div>
+        )}
       </div>
     )
   }

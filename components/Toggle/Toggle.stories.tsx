@@ -90,7 +90,7 @@ Dark.args = {
   label: '',
   description: '',
   className: '',
-  checked: false,
+  defaultChecked: false,
   disabled: false,
   onChange: action('changed'),
 }
@@ -103,7 +103,7 @@ Light.args = {
   label: '',
   description: '',
   className: '',
-  checked: false,
+  defaultChecked: false,
   disabled: false,
   onChange: action('changed'),
 }
