@@ -88,7 +88,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Toggle the state of a single setting on or off.',
+        component:
+          'Checkboxes allow the user to select one or more items from a set..',
       },
     },
   },
@@ -107,7 +108,7 @@ Dark.args = {
   description: '',
   className: '',
   rounded: false,
-  checked: false,
+  defaultChecked: false,
   disabled: false,
   onChange: action('changed'),
 }
@@ -121,7 +122,7 @@ Light.args = {
   description: '',
   className: '',
   rounded: false,
-  checked: false,
+  defaultChecked: false,
   disabled: false,
   onChange: action('changed'),
 }

@@ -71,7 +71,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Toggle the state of a single setting on or off.',
+        component:
+          'Radio buttons allow the user to select one option from a set.',
       },
     },
   },
