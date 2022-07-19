@@ -29,8 +29,8 @@ type TBaseProps = {
   size?: TButtonSizes
   color?: TButtonColors
   variant?: TButtonVariants
-  prefix?: ReactNode
-  suffix?: ReactNode
+  leading?: ReactNode
+  trailing?: ReactNode
   className?: string
   target?: string
   href?: string
@@ -71,8 +71,8 @@ const Button = ({
   size = 'md',
   color = 'primary',
   variant = 'contained',
-  prefix,
-  suffix,
+  leading,
+  trailing,
   className,
   target = '_self',
   href = '',
@@ -102,9 +102,9 @@ const Button = ({
           onClick={onClick}
           {...rest}
         >
-          {prefix && prefix}
+          {leading && leading}
           {children}
-          {suffix && suffix}
+          {trailing && trailing}
         </a>
       </Link>
     )
@@ -118,18 +118,18 @@ const Button = ({
         onClick={onClick}
         {...rest}
       >
-        {prefix && prefix}
+        {leading && leading}
         {children}
-        {suffix && suffix}
+        {trailing && trailing}
       </label>
     )
   }
 
   return (
     <button className={allClassNames} type={type} onClick={onClick} {...rest}>
-      {prefix && prefix}
+      {leading && leading}
       {children}
-      {suffix && suffix}
+      {trailing && trailing}
     </button>
   )
 }
