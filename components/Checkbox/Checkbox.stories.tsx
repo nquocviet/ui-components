@@ -89,7 +89,7 @@ export default {
     docs: {
       description: {
         component:
-          'Checkboxes allow the user to select one or more items from a set..',
+          'Checkboxes allow the user to select one or more items from a set.',
       },
     },
   },
