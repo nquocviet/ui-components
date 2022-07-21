@@ -87,5 +87,6 @@ const Toggle = forwardRef<HTMLInputElement, TToggleProps>(
     )
   }
 )
+Toggle.displayName = 'Toggle'
 
 export default Toggle

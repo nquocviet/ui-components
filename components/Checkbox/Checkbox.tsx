@@ -116,5 +116,6 @@ const Checkbox = forwardRef<HTMLInputElement, TCheckboxProps>(
     )
   }
 )
+Checkbox.displayName = 'Checkbox'
 
 export default Checkbox
