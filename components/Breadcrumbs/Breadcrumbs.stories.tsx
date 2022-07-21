@@ -75,7 +75,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Toggle the state of a single setting on or off.',
+        component:
+          'Breadcrumbs consist of a list of links that help a user visualize a page\'s location within the hierarchical structure of a website, and allow navigation up to any of its "ancestors".',
       },
     },
   },

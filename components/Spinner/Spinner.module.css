@@ -1,0 +1,227 @@
+.animation-spinner-dots-1 {
+  animation: spinner-dots-1 1.2s infinite linear;
+}
+
+.animation-spinner-dots-2 {
+  animation: spinner-dots-2 1.2s infinite linear;
+}
+
+.animation-spinner-dots-3 {
+  animation: spinner-dots-3 1.2s infinite linear;
+}
+
+.animation-spinner-dots-4 {
+  animation: spinner-dots-4 1.2s infinite linear;
+}
+
+.animation-spinner-dots-5 {
+  animation: spinner-dots-5 1.2s infinite linear;
+}
+
+.animation-spinner-dots-6 {
+  animation: spinner-dots-6 1.2s infinite linear;
+}
+
+.animation-spinner-dots-7 {
+  animation: spinner-dots-7 1.2s infinite linear;
+}
+
+.animation-spinner-dots-8 {
+  animation: spinner-dots-8 1.2s infinite linear;
+}
+
+.animation-spinner-dots-9 {
+  animation: spinner-dots-9 1.2s infinite linear;
+}
+
+.animation-spinner-dots-10 {
+  animation: spinner-dots-10 1.2s infinite linear;
+}
+
+.animation-spinner-dots-11 {
+  animation: spinner-dots-11 1.2s infinite linear;
+}
+
+.animation-spinner-dots-12 {
+  animation: spinner-dots-12 1.2s infinite linear;
+}
+
+@keyframes spinner-dots-1 {
+  0% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0;
+  }
+  8.3333333333% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spinner-dots-2 {
+  0% {
+    opacity: 0.0833333333;
+  }
+  8.3333333333% {
+    opacity: 0;
+  }
+  16.6666666667% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.0833333333;
+  }
+}
+
+@keyframes spinner-dots-3 {
+  0% {
+    opacity: 0.1666666667;
+  }
+  16.6666666667% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1666666667;
+  }
+}
+
+@keyframes spinner-dots-4 {
+  0% {
+    opacity: 0.25;
+  }
+  25% {
+    opacity: 0;
+  }
+  33.3333333333% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes spinner-dots-5 {
+  0% {
+    opacity: 0.3333333333;
+  }
+  33.3333333333% {
+    opacity: 0;
+  }
+  41.6666666667% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3333333333;
+  }
+}
+
+@keyframes spinner-dots-6 {
+  0% {
+    opacity: 0.4166666667;
+  }
+  41.6666666667% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4166666667;
+  }
+}
+
+@keyframes spinner-dots-7 {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  58.3333333333% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes spinner-dots-8 {
+  0% {
+    opacity: 0.5833333333;
+  }
+  58.3333333333% {
+    opacity: 0;
+  }
+  66.6666666667% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5833333333;
+  }
+}
+
+@keyframes spinner-dots-9 {
+  0% {
+    opacity: 0.6666666667;
+  }
+  66.6666666667% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6666666667;
+  }
+}
+
+@keyframes spinner-dots-10 {
+  0% {
+    opacity: 0.75;
+  }
+  75% {
+    opacity: 0;
+  }
+  83.3333333333% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes spinner-dots-11 {
+  0% {
+    opacity: 0.8333333333;
+  }
+  83.3333333333% {
+    opacity: 0;
+  }
+  91.6666666667% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8333333333;
+  }
+}
+
+@keyframes spinner-dots-12 {
+  0% {
+    opacity: 0.9166666667;
+  }
+  91.6666666667% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9166666667;
+  }
+}
