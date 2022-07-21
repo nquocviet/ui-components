@@ -166,6 +166,31 @@ module.exports = {
         maximum: 'var(--z-maximum)',
       },
     },
+    animation: {
+      'dash-loading': 'dash 2s ease-in-out infinite',
+      'rotate-loading': 'rotate 2s linear infinite',
+    },
+    keyframes: {
+      rotate: {
+        '100%': {
+          transform: 'rotate(360deg)',
+        },
+      },
+      dash: {
+        '0%': {
+          strokeDasharray: '1, var(--dash-array-2)',
+          strokeDashoffset: '0',
+        },
+        '50%': {
+          strokeDasharray: 'var(--dash-array-1), var(--dash-array-2)',
+          strokeDashoffset: 'var(--dash-offset-1)',
+        },
+        '100%': {
+          strokeDasharray: 'var(--dash-array-1), var(--dash-array-2)',
+          strokeDashoffset: 'var(--dash-offset-2)',
+        },
+      },
+    },
   },
   plugins: [
     function ({ addVariant }) {
