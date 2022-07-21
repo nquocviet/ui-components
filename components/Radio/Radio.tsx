@@ -107,5 +107,6 @@ const Radio = forwardRef<HTMLInputElement, TRadioProps>(
     )
   }
 )
+Radio.displayName = 'Radio'
 
 export default Radio
