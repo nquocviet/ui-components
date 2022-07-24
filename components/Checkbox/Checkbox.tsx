@@ -4,7 +4,7 @@ import { Check } from 'phosphor-react'
 import { useId, useToggle } from '@/hooks'
 import { styles } from './Checkbox.styles'
 
-type TCheckboxSizes = 'xs' | 'sm' | 'md' | 'lg'
+export type TCheckboxSizes = 'xs' | 'sm' | 'md' | 'lg'
 
 type TCheckboxThemes = 'light' | 'dark'
 
