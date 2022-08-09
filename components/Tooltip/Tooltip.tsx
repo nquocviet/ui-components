@@ -30,7 +30,7 @@ type TTooltipProps = {
   mouseEnterDelay?: number
   zIndex?: number | null
   className?: string
-}
+} & React.HTMLAttributes<HTMLDivElement>
 
 const Tooltip = ({
   children,

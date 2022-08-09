@@ -31,7 +31,7 @@ type TBadgeProps = {
   maxCount?: number
   placement?: TBadgePlacements
   className?: string
-}
+} & React.HTMLAttributes<HTMLDivElement>
 
 const Badge = ({
   variant = 'standard',
@@ -46,6 +46,7 @@ const Badge = ({
     vertical: 'top',
   },
   className,
+  ...rest
 }: TBadgeProps) => {
   const { horizontal, vertical } = placement
   const allClassNames = clsx(
@@ -58,7 +59,7 @@ const Badge = ({
   )
 
   return (
-    <div className={clsx('inline-block relative', className)}>
+    <div className={clsx('inline-block relative', className)} {...rest}>
       {children && children}
       {variant === 'dot' && <span className={allClassNames}></span>}
       {variant === 'standard' && (
