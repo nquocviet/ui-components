@@ -13,11 +13,20 @@ export const styles = {
     'display-xl': 'text-display-xl',
     'display-2xl': 'text-display-2xl',
   },
-  align: {
+  aligns: {
     center: 'text-center',
     left: 'text-left',
     right: 'text-right',
     justify: 'text-justify',
+  },
+  weights: {
+    light: 'font-light',
+    regular: 'font-regular',
+    medium: 'font-medium',
+    semibold: 'font-semibold',
+    bold: 'font-bold',
+    extrabold: 'font-extrabold',
+    black: 'font-black',
   },
   gutter: 'mb-4',
   noWrap: 'whitespace-nowrap overflow-hidden text-ellipsis',
