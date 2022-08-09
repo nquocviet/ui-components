@@ -37,6 +37,7 @@ const Radio = forwardRef<HTMLInputElement, TRadioProps>(
       defaultValue,
       disabled = false,
       onChange,
+      ...rest
     },
     ref
   ) => {
@@ -65,6 +66,7 @@ const Radio = forwardRef<HTMLInputElement, TRadioProps>(
             }}
             defaultChecked={defaultValue === value}
             disabled={disabled}
+            {...rest}
           />
           <div
             className={clsx(

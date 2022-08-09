@@ -11,12 +11,13 @@ type TSpinnerProps = {
   type?: TSpinnerTypes
   size?: TSpinnerSizes
   className?: string
-}
+} & React.HTMLAttributes<HTMLDivElement>
 
 const Spinner = ({
   type = 'circular',
   size = 'md',
   className,
+  ...rest
 }: TSpinnerProps) => {
   const [box, line, space] = styles.sizes[size]
   const isAbsolute = (className as string).includes('absolute')
@@ -42,6 +43,7 @@ const Spinner = ({
           ['--dash-offset-1' as any]: -box - line * 4,
           ['--dash-offset-2' as any]: -box * 5 - line * 2 - space,
         }}
+        {...rest}
       >
         <svg
           className={clsx(

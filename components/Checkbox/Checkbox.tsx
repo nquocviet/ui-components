@@ -38,6 +38,7 @@ const Checkbox = forwardRef<HTMLInputElement, TCheckboxProps>(
       defaultChecked = false,
       disabled = false,
       onChange,
+      ...rest
     },
     ref
   ) => {
@@ -73,6 +74,7 @@ const Checkbox = forwardRef<HTMLInputElement, TCheckboxProps>(
             }}
             checked={toggle}
             disabled={disabled}
+            {...rest}
           />
           <div
             className={clsx(

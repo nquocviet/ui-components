@@ -16,7 +16,7 @@ type TBreadcrumbsProps = {
   itemsBeforeCollapse?: number
   children: ReactNode[]
   className?: string
-}
+} & React.HTMLAttributes<HTMLDivElement>
 
 const separators = {
   chevron: <CaretRight size={12} />,
@@ -31,6 +31,7 @@ const Breadcrumbs = ({
   itemsBeforeCollapse = 1,
   children,
   className,
+  ...rest
 }: TBreadcrumbsProps) => {
   const allClassNames = clsx(styles.base, styles.types[type], className)
   const totalItems = children.length
@@ -38,7 +39,7 @@ const Breadcrumbs = ({
   const [collapsed, setCollapsed] = useState<boolean>(shouldCollapsed)
 
   return (
-    <div className={allClassNames}>
+    <div className={allClassNames} {...rest}>
       {children.map((item, index) => {
         const isLastItem = index === totalItems - 1
         const isHidden =

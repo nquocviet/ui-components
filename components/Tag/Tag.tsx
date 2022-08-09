@@ -21,7 +21,7 @@ type TTagProps = {
   className?: string
   onClose: () => void
   onCheck: () => void
-}
+} & React.HTMLAttributes<HTMLSpanElement>
 
 const Tag = ({
   action = 'text',

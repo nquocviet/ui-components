@@ -42,7 +42,7 @@ type TTypographyProps = {
   noWrap?: boolean
   className?: string
   style?: React.CSSProperties | TStyles
-}
+} & React.HTMLAttributes<HTMLBaseElement>
 
 const Typography = ({
   children,
