@@ -31,7 +31,7 @@ export default {
       },
       control: {
         type: 'select',
-        options: ['button', 'submit', 'select'],
+        options: ['button', 'submit', 'reset'],
       },
     },
     size: {

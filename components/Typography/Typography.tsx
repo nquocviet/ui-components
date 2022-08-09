@@ -19,6 +19,15 @@ type TTypographyVariants =
 
 type TTypographyAligns = 'center' | 'left' | 'right' | 'justify'
 
+type TTypographyWeights =
+  | 'light'
+  | 'regular'
+  | 'medium'
+  | 'semibold'
+  | 'bold'
+  | 'extrabold'
+  | 'black'
+
 type TTypographyFontSizes =
   | 'text-2xs'
   | 'text-xs'
@@ -37,6 +46,7 @@ type TTypographyProps = {
   children: ReactNode
   variant?: TTypographyVariants
   align?: TTypographyAligns
+  weight?: TTypographyWeights
   fontSize?: TTypographyFontSizes
   gutter?: boolean
   noWrap?: boolean
@@ -50,6 +60,7 @@ const Typography = forwardRef<HTMLBaseElement, TTypographyProps>(
       children,
       variant = 'p',
       align = 'left',
+      weight = 'regular',
       fontSize = 'text-md',
       gutter = false,
       noWrap = false,
@@ -60,7 +71,8 @@ const Typography = forwardRef<HTMLBaseElement, TTypographyProps>(
     ref
   ) => {
     const allClassNames = clsx(
-      styles.align[align],
+      styles.aligns[align],
+      styles.weights[weight],
       styles.fontSizes[fontSize],
       gutter && styles.gutter,
       noWrap && styles.noWrap,
