@@ -24,7 +24,7 @@ type TCheckboxProps = {
     | ((event: React.ChangeEvent<HTMLInputElement>) => void)
 } & React.HTMLAttributes<HTMLInputElement>
 
-const Checkbox = forwardRef<HTMLInputElement, TCheckboxProps>(
+const Checkbox = forwardRef<HTMLDivElement, TCheckboxProps>(
   (
     {
       size = 'md',
@@ -51,7 +51,10 @@ const Checkbox = forwardRef<HTMLInputElement, TCheckboxProps>(
     const id = useId()
 
     return (
-      <div className={clsx('inline-flex items-start gap-2', className)}>
+      <div
+        className={clsx('inline-flex items-start gap-2', className)}
+        ref={ref}
+      >
         <label
           className='inline-flex justify-center items-center w-checkbox h-checkbox cursor-pointer overflow-hidden relative'
           style={{
@@ -65,7 +68,6 @@ const Checkbox = forwardRef<HTMLInputElement, TCheckboxProps>(
             className='peer hidden'
             value={value}
             id={id}
-            ref={ref}
             onChange={(event) => {
               if (!disabled) {
                 setToggle()

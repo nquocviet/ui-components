@@ -29,7 +29,7 @@ type TInputProps = {
   onChange?: (() => void) | ((event: ChangeEvent<HTMLInputElement>) => void)
 } & React.HTMLAttributes<HTMLInputElement>
 
-const Input = forwardRef<HTMLInputElement, TInputProps>(
+const Input = forwardRef<HTMLLabelElement, TInputProps>(
   (
     {
       type = 'text',
@@ -62,7 +62,7 @@ const Input = forwardRef<HTMLInputElement, TInputProps>(
     const isInputPassword = type === 'password'
 
     return (
-      <label className='block w-full'>
+      <label className='block w-full' ref={ref}>
         {label && (
           <Typography
             fontSize='text-sm'
@@ -92,7 +92,6 @@ const Input = forwardRef<HTMLInputElement, TInputProps>(
             maxLength={maxLength}
             spellCheck='false'
             placeholder={placeholder}
-            ref={ref}
             name={name}
             disabled={disabled}
             {...rest}

@@ -169,6 +169,7 @@ module.exports = {
     animation: {
       'dash-loading': 'dash 2s ease-in-out infinite',
       'rotate-loading': 'rotate 2s linear infinite',
+      pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
     },
     keyframes: {
       rotate: {
@@ -188,6 +189,11 @@ module.exports = {
         '100%': {
           strokeDasharray: 'var(--dash-array-1), var(--dash-array-2)',
           strokeDashoffset: 'var(--dash-offset-2)',
+        },
+      },
+      pulse: {
+        '50%': {
+          opacity: 0.5,
         },
       },
     },

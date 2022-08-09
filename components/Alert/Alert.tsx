@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React, { forwardRef, ReactNode, useState } from 'react'
 import { Info, Warning, WarningCircle, CheckCircle, X } from 'phosphor-react'
 import clsx from 'clsx'
 import { useInterval } from '@/hooks'
@@ -46,81 +46,88 @@ const alertIcons = {
   success: <CheckCircle size={20} />,
 }
 
-const Alert = ({
-  color = 'primary',
-  variant = 'outlined',
-  icon = true,
-  title,
-  description,
-  action,
-  width = 'auto',
-  open = true,
-  closeButton = false,
-  floating = false,
-  autoHideDuration = 0,
-  placement = {
-    horizontal: 'right',
-    vertical: 'top',
-  },
-  zIndex = null,
-  className,
-  onClose,
-  ...rest
-}: TAlertProps) => {
-  const allClassNames = clsx(
-    styles.base,
-    styles.colors[color][variant],
-    closeButton && 'xs:pr-12',
-    className
-  )
-  const [timer, setTimer] = useState<number>(0)
+const Alert = forwardRef<HTMLDivElement, TAlertProps>(
+  (
+    {
+      color = 'primary',
+      variant = 'outlined',
+      icon = true,
+      title,
+      description,
+      action,
+      width = 'auto',
+      open = true,
+      closeButton = false,
+      floating = false,
+      autoHideDuration = 0,
+      placement = {
+        horizontal: 'right',
+        vertical: 'top',
+      },
+      zIndex = null,
+      className,
+      onClose,
+      ...rest
+    },
+    ref
+  ) => {
+    const allClassNames = clsx(
+      styles.base,
+      styles.colors[color][variant],
+      closeButton && 'xs:pr-12',
+      className
+    )
+    const [timer, setTimer] = useState<number>(0)
 
-  useInterval(() => {
-    setTimer((prevState) => prevState + 1)
+    useInterval(() => {
+      setTimer((prevState) => prevState + 1)
 
-    if (autoHideDuration && timer === autoHideDuration / 1000) {
-      onClose && onClose()
-    }
-  })
+      if (autoHideDuration && timer === autoHideDuration / 1000) {
+        onClose && onClose()
+      }
+    })
 
-  return (open && (
-    <div
-      className={clsx(
-        'w-alert',
-        floating && styles.placements[placement.horizontal],
-        floating && styles.placements[placement.vertical],
-        floating && 'fixed p-4',
-        !zIndex && floating && 'z-sticky'
-      )}
-      style={{
-        ...(width && { ['--alert-width' as any]: width }),
-        ...(zIndex && { zIndex }),
-      }}
-      {...rest}
-    >
-      <div className={allClassNames}>
-        <div className='shrink-0'>
-          {typeof icon === 'boolean' ? icon && alertIcons[color] : icon}
-        </div>
-        <div className='flex flex-col items-start gap-3'>
-          <div className='flex flex-col gap-1 text-sm'>
-            <div className='font-semibold'>{title}</div>
-            <div>{description}</div>
-          </div>
-          {action}
-        </div>
-        {closeButton && (
-          <button
-            type='button'
-            className='absolute top-4 right-4'
-            onClick={() => onClose && onClose()}
-          >
-            <X size={20} />
-          </button>
+    return (open && (
+      <div
+        className={clsx(
+          'w-alert',
+          floating && styles.placements[placement.horizontal],
+          floating && styles.placements[placement.vertical],
+          floating && 'fixed p-4',
+          !zIndex && floating && 'z-sticky'
         )}
+        style={{
+          ...(width && { ['--alert-width' as any]: width }),
+          ...(zIndex && { zIndex }),
+        }}
+        ref={ref}
+        {...rest}
+      >
+        <div className={allClassNames}>
+          <div className='shrink-0'>
+            {typeof icon === 'boolean' ? icon && alertIcons[color] : icon}
+          </div>
+          <div className='flex flex-col items-start gap-3'>
+            <div className='flex flex-col gap-1 text-sm'>
+              <div className='font-semibold'>{title}</div>
+              <div>{description}</div>
+            </div>
+            {action}
+          </div>
+          {closeButton && (
+            <button
+              type='button'
+              className='absolute top-4 right-4'
+              onClick={() => onClose && onClose()}
+            >
+              <X size={20} />
+            </button>
+          )}
+        </div>
       </div>
-    </div>
-  )) as JSX.Element
-}
+    )) as JSX.Element
+  }
+)
+Alert.displayName = 'Alert'
 
 export default Alert

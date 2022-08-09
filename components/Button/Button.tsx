@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { forwardRef, ReactNode } from 'react'
 import Link, { LinkProps } from 'next/link'
 import clsx from 'clsx'
 import { styles } from './Button.styles'
@@ -65,73 +65,82 @@ type TButtonAsLabel = TBaseProps &
 
 type TButtonProps = TButtonAsButton | TButtonAsLink | TButtonAsLabel
 
-const Button = ({
-  children,
-  type = 'button',
-  size = 'md',
-  color = 'primary',
-  variant = 'contained',
-  leading,
-  trailing,
-  className,
-  target = '_self',
-  href = '',
-  onlyIcon = false,
-  fluid,
-  rounded = false,
-  onClick,
-  ...rest
-}: TButtonProps) => {
-  const allClassNames = clsx(
-    styles.base,
-    styles.colors[color][variant],
-    styles.fontSizes[size],
-    styles.width[fluid ? 'fluid' : 'auto'],
-    variant !== 'link' &&
-      (onlyIcon ? styles.iconSizes[size] : styles.sizes[size]),
-    rounded && 'rounded-full',
-    className
-  )
+const Button = forwardRef<
+  HTMLButtonElement | HTMLAnchorElement | HTMLLabelElement,
+  TButtonProps
+>(
+  (
+    {
+      children,
+      type = 'button',
+      size = 'md',
+      color = 'primary',
+      variant = 'contained',
+      leading,
+      trailing,
+      className,
+      target = '_self',
+      href = '',
+      onlyIcon = false,
+      fluid,
+      rounded = false,
+      onClick,
+      ...rest
+    },
+    ref
+  ) => {
+    const allClassNames = clsx(
+      styles.base,
+      styles.colors[color][variant],
+      styles.fontSizes[size],
+      styles.width[fluid ? 'fluid' : 'auto'],
+      variant !== 'link' &&
+        (onlyIcon ? styles.iconSizes[size] : styles.sizes[size]),
+      rounded && 'rounded-full',
+      className
+    )
 
-  if (rest.as === 'a') {
-    return (
-      <Link href={href}>
-        <a
+    if (rest.as === 'a') {
+      return (
+        <Link href={href}>
+          <a
+            className={allClassNames}
+            target={target}
+            onClick={onClick}
+            {...rest}
+          >
+            {leading && leading}
+            {children}
+            {trailing && trailing}
+          </a>
+        </Link>
+      )
+    }
+
+    if (rest.as === 'label') {
+      return (
+        <label
+          role='button'
           className={allClassNames}
-          target={target}
           onClick={onClick}
           {...rest}
         >
           {leading && leading}
           {children}
           {trailing && trailing}
-        </a>
-      </Link>
-    )
-  }
+        </label>
+      )
+    }
 
-  if (rest.as === 'label') {
     return (
-      <label
-        role='button'
-        className={allClassNames}
-        onClick={onClick}
-        {...rest}
-      >
+      <button className={allClassNames} type={type} onClick={onClick} {...rest}>
         {leading && leading}
         {children}
         {trailing && trailing}
-      </label>
+      </button>
     )
   }
-
-  return (
-    <button className={allClassNames} type={type} onClick={onClick} {...rest}>
-      {leading && leading}
-      {children}
-      {trailing && trailing}
-    </button>
-  )
-}
+)
+Button.displayName = 'Button'
 
 export default Button

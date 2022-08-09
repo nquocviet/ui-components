@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { forwardRef, ReactNode } from 'react'
 import clsx from 'clsx'
 import { styles } from './Chip.styles'
 import { X } from 'phosphor-react'
@@ -20,41 +20,47 @@ type TChipProps = {
   onDelete?: () => void
 } & React.HTMLAttributes<HTMLDivElement>
 
-const Chip = ({
-  variant = 'contained',
-  size = 'md',
-  color = 'primary',
-  label,
-  leading,
-  trailing,
-  className,
-  onClick,
-  onDelete,
-  ...rest
-}: TChipProps) => {
-  const allClassNames = clsx(
-    styles.base,
-    styles.colors[color][variant],
-    styles.sizes[size],
-    onClick && 'cursor-pointer',
-    className
-  )
+const Chip = forwardRef<HTMLDivElement, TChipProps>(
+  (
+    {
+      variant = 'contained',
+      size = 'md',
+      color = 'primary',
+      label,
+      leading,
+      trailing,
+      className,
+      onClick,
+      onDelete,
+      ...rest
+    },
+    ref
+  ) => {
+    const allClassNames = clsx(
+      styles.base,
+      styles.colors[color][variant],
+      styles.sizes[size],
+      onClick && 'cursor-pointer',
+      className
+    )
 
-  return (
-    <div className={allClassNames} onClick={onClick} {...rest}>
-      {leading && <span className={styles.leading[size]}>{leading}</span>}
-      {label}
-      {trailing && <span className={styles.trailing[size]}>{trailing}</span>}
-      {onDelete && (
-        <X
-          role='button'
-          weight='bold'
-          size={16}
-          onClick={() => onDelete && onDelete()}
-        />
-      )}
-    </div>
-  )
-}
+    return (
+      <div className={allClassNames} onClick={onClick} ref={ref} {...rest}>
+        {leading && <span className={styles.leading[size]}>{leading}</span>}
+        {label}
+        {trailing && <span className={styles.trailing[size]}>{trailing}</span>}
+        {onDelete && (
+          <X
+            role='button'
+            weight='bold'
+            size={16}
+            onClick={() => onDelete && onDelete()}
+          />
+        )}
+      </div>
+    )
+  }
+)
+Chip.displayName = 'Chip'
 
 export default Chip

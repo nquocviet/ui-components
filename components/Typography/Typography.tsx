@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { forwardRef, ReactNode } from 'react'
 import clsx from 'clsx'
 import { styles } from './Typography.styles'
 
@@ -44,30 +44,36 @@ type TTypographyProps = {
   style?: React.CSSProperties | TStyles
 } & React.HTMLAttributes<HTMLBaseElement>
 
-const Typography = ({
-  children,
-  variant = 'p',
-  align = 'left',
-  fontSize = 'text-md',
-  gutter = false,
-  noWrap = false,
-  className,
-  style,
-  ...rest
-}: TTypographyProps) => {
-  const allClassNames = clsx(
-    styles.align[align],
-    styles.fontSizes[fontSize],
-    gutter && styles.gutter,
-    noWrap && styles.noWrap,
-    className
-  )
+const Typography = forwardRef<HTMLBaseElement, TTypographyProps>(
+  (
+    {
+      children,
+      variant = 'p',
+      align = 'left',
+      fontSize = 'text-md',
+      gutter = false,
+      noWrap = false,
+      className,
+      style,
+      ...rest
+    },
+    ref
+  ) => {
+    const allClassNames = clsx(
+      styles.align[align],
+      styles.fontSizes[fontSize],
+      gutter && styles.gutter,
+      noWrap && styles.noWrap,
+      className
+    )
 
-  return React.createElement(
-    variant,
-    { className: allClassNames, style, ...rest },
-    children
-  )
-}
+    return React.createElement(
+      variant,
+      { className: allClassNames, style, ref, ...rest },
+      children
+    )
+  }
+)
+Typography.displayName = 'Typography'
 
 export default Typography
