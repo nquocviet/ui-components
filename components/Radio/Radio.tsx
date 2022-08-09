@@ -23,7 +23,7 @@ type TRadioProps = {
     | ((event: React.ChangeEvent<HTMLInputElement>) => void)
 } & React.HTMLAttributes<HTMLInputElement>
 
-const Radio = forwardRef<HTMLInputElement, TRadioProps>(
+const Radio = forwardRef<HTMLDivElement, TRadioProps>(
   (
     {
       size = 'md',
@@ -45,7 +45,10 @@ const Radio = forwardRef<HTMLInputElement, TRadioProps>(
     const id = useId()
 
     return (
-      <div className={clsx('inline-flex items-start gap-2', className)}>
+      <div
+        className={clsx('inline-flex items-start gap-2', className)}
+        ref={ref}
+      >
         <label
           className='inline-flex justify-center items-center w-radio h-radio rounded-full cursor-pointer overflow-hidden relative'
           style={{
@@ -58,7 +61,6 @@ const Radio = forwardRef<HTMLInputElement, TRadioProps>(
             name={name}
             value={value}
             id={id}
-            ref={ref}
             onChange={(event) => {
               if (!disabled) {
                 onChange(event)

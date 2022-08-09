@@ -21,7 +21,7 @@ type TToggleProps = {
     | ((event: React.ChangeEvent<HTMLInputElement>) => void)
 } & React.HTMLAttributes<HTMLInputElement>
 
-const Toggle = forwardRef<HTMLInputElement, TToggleProps>(
+const Toggle = forwardRef<HTMLDivElement, TToggleProps>(
   (
     {
       size = 'md',
@@ -41,7 +41,10 @@ const Toggle = forwardRef<HTMLInputElement, TToggleProps>(
     const [toggle, setToggle] = useToggle(defaultChecked)
 
     return (
-      <div className={clsx('inline-flex items-start gap-2', className)}>
+      <div
+        className={clsx('inline-flex items-start gap-2', className)}
+        ref={ref}
+      >
         <label
           className='inline-block'
           style={{
@@ -52,7 +55,6 @@ const Toggle = forwardRef<HTMLInputElement, TToggleProps>(
           <input
             type='checkbox'
             className='peer hidden'
-            ref={ref}
             onChange={(event) => {
               if (!disabled) {
                 setToggle()

@@ -38,13 +38,13 @@ export const styles = {
     lg: 'text-sm px-3 py-1',
   },
   leading: {
-    sm: '-ml-1',
-    md: '-ml-[5px]',
-    lg: '-ml-1.5',
+    sm: '-ml-[5px]',
+    md: '-ml-1.5',
+    lg: '-ml-2',
   },
   trailing: {
-    sm: '-mr-1',
-    md: '-mr-[5px]',
-    lg: '-mr-1.5',
+    sm: '-mr-[5px]',
+    md: '-mr-1.5',
+    lg: '-mr-2',
   },
 }
