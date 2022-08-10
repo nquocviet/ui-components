@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Divider } from '@/components/Divider'
-import { Typography } from '../Typography'
+import Divider from '@/components/Divider'
+import Typography from '../Typography'
 
 export default {
   title: 'Design System/Components/Divider',

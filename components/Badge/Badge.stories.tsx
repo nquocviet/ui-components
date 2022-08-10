@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Badge } from '@/components/Badge'
+import Badge from '@/components/Badge'
 import { BellSimple } from 'phosphor-react'
 
 export default {

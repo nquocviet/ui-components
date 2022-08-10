@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Skeleton } from '@/components/Skeleton'
+import Skeleton from '@/components/Skeleton'
 
 export default {
   title: 'Design System/Components/Skeleton',
@@ -38,7 +38,7 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: true },
       },
-      control: { type: 'text' },
+      control: { type: 'boolean' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',

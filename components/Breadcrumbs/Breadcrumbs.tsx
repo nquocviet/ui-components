@@ -1,7 +1,7 @@
 import React, { forwardRef, ReactNode, useState } from 'react'
 import { CaretRight, DotsThree } from 'phosphor-react'
 import { styles } from './Breadcrumbs.styles'
-import { Button } from '../Button'
+import Button from '../Button'
 import clsx from 'clsx'
 
 type TBreadcrumbsType = 'text' | 'line'

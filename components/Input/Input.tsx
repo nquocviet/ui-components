@@ -2,7 +2,7 @@ import React, { ChangeEvent, forwardRef, ReactNode, useState } from 'react'
 import clsx from 'clsx'
 import { Eye, EyeSlash } from 'phosphor-react'
 import { styles } from './Input.styles'
-import { Typography } from '../Typography'
+import Typography from '../Typography'
 
 const MAX_LENGTH_INPUT = 255
 

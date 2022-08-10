@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { Tag } from '@/components/Tag'
+import Tag from '@/components/Tag'
 
 export default {
   title: 'Design System/Components/Tag',
