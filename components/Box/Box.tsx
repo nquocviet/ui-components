@@ -5,7 +5,7 @@ import clsx from 'clsx'
 type TBoxProps = {
   width?: number | string
   height?: number | string
-  ratio?: number
+  ratio?: number | string
   children?: ReactNode
   className?: string
 } & React.HTMLAttributes<HTMLDivElement>
