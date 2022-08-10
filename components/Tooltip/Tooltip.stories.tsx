@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Tooltip } from '@/components/Tooltip'
-import { Button } from '../Button'
+import Tooltip from '@/components/Tooltip'
+import Button from '../Button'
 import { Warning } from 'phosphor-react'
 
 export default {

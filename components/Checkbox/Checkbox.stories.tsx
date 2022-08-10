@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { Checkbox } from '@/components/Checkbox'
+import Checkbox from '@/components/Checkbox'
 
 export default {
   title: 'Design System/Components/Checkbox',

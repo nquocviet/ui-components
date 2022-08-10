@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { Button } from '@/components/Button'
+import Button from '@/components/Button'
 import { ArrowLeft, ArrowRight, CaretLeft, CaretRight } from 'phosphor-react'
 
 const icons = {

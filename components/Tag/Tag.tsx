@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { X } from 'phosphor-react'
 import React, { forwardRef } from 'react'
-import { Checkbox } from '../Checkbox'
+import Checkbox from '../Checkbox'
 import { TCheckboxSizes } from '../Checkbox/Checkbox'
 import { styles } from './Tag.styles'
 

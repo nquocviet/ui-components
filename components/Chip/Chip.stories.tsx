@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Chip } from '@/components/Chip'
+import Chip from '@/components/Chip'
 import { Aperture } from 'phosphor-react'
 import { action } from '@storybook/addon-actions'
 
