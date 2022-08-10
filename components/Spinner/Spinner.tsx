@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './Spinner.styles'
-import './Spinner.module.css'
+import stylesModule from './Spinner.module.css'
 
 type TSpinnerTypes = 'circular' | 'dash' | 'dots'
 
@@ -81,7 +81,7 @@ const Spinner = forwardRef<HTMLDivElement, TSpinnerProps>(
             key={index}
             className={clsx(
               'absolute top-0 left-0 w-full h-full',
-              `animation-spinner-dots-${index + 1}`
+              stylesModule[`animation-spinner-dots-${index + 1}`]
             )}
             style={{
               transform: `rotate(${index * 30}deg)`,

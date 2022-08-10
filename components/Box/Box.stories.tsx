@@ -21,6 +21,7 @@ export default {
       description: 'Ratio of the component.',
       table: {
         type: { summary: 'number' },
+        defaultValue: { summary: 1 / 1 },
       },
     },
     children: {
