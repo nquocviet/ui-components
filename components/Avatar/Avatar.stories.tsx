@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Avatar from '@/components/Avatar'
-import { BellSimple } from 'phosphor-react'
 
 export default {
   title: 'Design System/Components/Avatar',
@@ -75,7 +74,7 @@ export default {
     docs: {
       description: {
         component:
-          'Badge generates a small badge to the top-right of its child(ren).',
+          'Avatars are found throughout material design with uses in everything from tables to dialog menus.',
       },
     },
   },

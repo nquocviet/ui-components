@@ -71,4 +71,4 @@ const Template: ComponentStory<typeof Skeleton> = () => (
   </div>
 )
 
-export const Card = Template.bind({})
+export const Example = Template.bind({})

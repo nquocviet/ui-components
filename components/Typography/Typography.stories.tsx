@@ -104,8 +104,8 @@ const Template: ComponentStory<typeof Typography> = (args) => (
   <Typography {...args} />
 )
 
-export const Typo = Template.bind({})
-Typo.args = {
+export const Example = Template.bind({})
+Example.args = {
   children:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci corporis, ut quidem est explicabo eveniet molestiae ab, accusamus, illo incidunt tempora ullam necessitatibus corrupti. Velit?',
   variant: 'p',
