@@ -35,7 +35,10 @@ const Skeleton = forwardRef<HTMLDivElement, TSkeletonProps>(
       <div
         className={allClassNames}
         ref={ref}
-        style={{ width, height }}
+        style={{
+          ...(width && { width }),
+          ...(height && { height }),
+        }}
         {...rest}
       />
     )
