@@ -10,8 +10,8 @@ export const styles = {
         'bg-primary-25 text-primary-700 border-primary-25 ring-primary-100 enabled:hover:bg-primary-50 enabled:hover:border-primary-50 disabled:bg-primary-25 disabled:border-primary-25 disabled:text-primary-300',
       outlined:
         'bg-white text-primary-700 border-primary-500 ring-primary-100 enabled:hover:bg-primary-50 disabled:border-primary-200 disabled:text-primary-300',
-      text: 'bg-white text-primary-700 border-white ring-primary-100 enabled:hover:border-primary-50 enabled:hover:bg-primary-50 disabled:text-gray-300',
-      link: 'bg-white text-primary-700 border-white enabled:hover:underline disabled:text-gray-300',
+      text: 'text-primary-700 border-transparent ring-primary-100 enabled:hover:border-primary-50 enabled:hover:bg-primary-50 disabled:text-gray-300',
+      link: 'text-primary-700 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     gray: {
       contained:
@@ -22,8 +22,8 @@ export const styles = {
         'bg-gray-50 text-gray-700 border-gray-50 ring-gray-200 enabled:hover:bg-gray-100 enabled:hover:border-gray-100 disabled:bg-gray-50 disabled:border-gray-50 disabled:text-gray-300',
       outlined:
         'bg-white text-gray-700 border-gray-500 ring-gray-200 enabled:hover:bg-gray-100 disabled:border-gray-200 disabled:text-gray-300',
-      text: 'bg-white text-gray-700 border-white ring-gray-200 enabled:hover:border-gray-50 enabled:hover:bg-gray-50 disabled:text-gray-300',
-      link: 'bg-white text-gray-700 border-white enabled:hover:underline disabled:text-gray-300',
+      text: 'text-gray-700 border-transparent ring-gray-200 enabled:hover:border-gray-50 enabled:hover:bg-gray-50 disabled:text-gray-300',
+      link: 'text-gray-700 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     info: {
       contained:
@@ -34,8 +34,8 @@ export const styles = {
         'bg-info-25 text-info-500 border-info-25 ring-info-100 enabled:hover:bg-info-50 enabled:hover:border-info-50 disabled:bg-info-25 disabled:border-info-25 disabled:text-info-300',
       outlined:
         'bg-white text-info-600 border-info-500 ring-info-100 enabled:hover:bg-info-50 disabled:border-info-200 disabled:text-info-300',
-      text: 'bg-white text-info-600 border-white ring-info-100 enabled:hover:border-info-50 enabled:hover:bg-info-50 disabled:text-gray-300',
-      link: 'bg-white text-info-600 border-white enabled:hover:underline disabled:text-gray-300',
+      text: 'text-info-600 border-transparent ring-info-100 enabled:hover:border-info-50 enabled:hover:bg-info-50 disabled:text-gray-300',
+      link: 'text-info-600 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     error: {
       contained:
@@ -46,8 +46,8 @@ export const styles = {
         'bg-error-25 text-error-700 border-error-25 ring-error-100 enabled:hover:bg-error-50 enabled:hover:border-error-50 disabled:bg-error-25 disabled:border-error-25 disabled:text-error-300',
       outlined:
         'bg-white text-error-700 border-error-500 ring-error-100 enabled:hover:bg-error-50 disabled:border-error-200 disabled:text-error-300',
-      text: 'bg-white text-error-700 border-white ring-error-100 enabled:hover:border-error-50 enabled:hover:bg-error-50 disabled:text-gray-300',
-      link: 'bg-white text-error-700 border-white enabled:hover:underline disabled:text-gray-300',
+      text: 'text-error-700 border-transparent ring-error-100 enabled:hover:border-error-50 enabled:hover:bg-error-50 disabled:text-gray-300',
+      link: 'text-error-700 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     warning: {
       contained:
@@ -58,8 +58,8 @@ export const styles = {
         'bg-warning-25 text-warning-600 border-warning-25 ring-warning-100 enabled:hover:bg-warning-50 enabled:hover:border-warning-50 disabled:bg-warning-25 disabled:border-warning-25 disabled:text-warning-200',
       outlined:
         'bg-white text-warning-600 border-warning-400 ring-warning-100 enabled:hover:bg-warning-50 disabled:border-warning-100 disabled:text-warning-200',
-      text: 'bg-white text-warning-600 border-white ring-warning-100 enabled:hover:border-warning-50 enabled:hover:bg-warning-50 disabled:text-gray-300',
-      link: 'bg-white text-warning-600 border-white enabled:hover:underline disabled:text-gray-300',
+      text: 'text-warning-600 border-transparent ring-warning-100 enabled:hover:border-warning-50 enabled:hover:bg-warning-50 disabled:text-gray-300',
+      link: 'text-warning-600 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     success: {
       contained:
@@ -70,8 +70,8 @@ export const styles = {
         'bg-success-25 text-success-600 border-success-25 ring-success-100 enabled:hover:bg-success-50 enabled:hover:border-success-50 disabled:bg-success-25 disabled:border-success-25 disabled:text-success-300',
       outlined:
         'bg-white text-success-600 border-success-500 ring-success-100 enabled:hover:bg-success-50 disabled:border-success-200 disabled:text-success-300',
-      text: 'bg-white text-success-600 border-white ring-success-100 enabled:hover:border-success-50 enabled:hover:bg-success-50 disabled:text-gray-300',
-      link: 'bg-white text-success-600 border-white enabled:hover:underline disabled:text-gray-300',
+      text: 'text-success-600 border-transparent ring-success-100 enabled:hover:border-success-50 enabled:hover:bg-success-50 disabled:text-gray-300',
+      link: 'text-success-600 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
   },
   fontSizes: {

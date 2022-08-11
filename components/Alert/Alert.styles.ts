@@ -1,5 +1,5 @@
 export const styles = {
-  base: 'relative flex flex-col gap-2 py-4 pl-4 pr-4 border rounded-lg xs:flex-row',
+  base: 'relative flex flex-col gap-2 p-4 border rounded-lg xs:flex-row',
   colors: {
     primary: {
       contained: 'bg-primary-600 border-primary-600 text-white',
