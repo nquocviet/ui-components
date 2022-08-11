@@ -21,6 +21,10 @@ module.exports = {
         xl: '1240px',
         '2xl': '1400px',
       },
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+      },
     },
     fontSize: {
       'display-2xl': ['var(--fs-display-2xl)', 'var(--lh-display-2xl)'],

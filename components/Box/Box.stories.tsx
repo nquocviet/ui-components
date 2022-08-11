@@ -50,7 +50,7 @@ export default {
 } as ComponentMeta<typeof Box>
 
 const Template: ComponentStory<typeof Box> = (arg) => (
-  <Box className='bg-primary-600' width={150} {...arg} />
+  <Box className='bg-primary-200' width={150} {...arg} />
 )
 
 export const Example = Template.bind({})
