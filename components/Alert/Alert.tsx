@@ -78,12 +78,17 @@ const Alert = forwardRef<HTMLDivElement, TAlertProps>(
       className
     )
     const [timer, setTimer] = useState<number>(0)
+    const [pause, setPause] = useState<boolean>(false)
 
     useInterval(() => {
-      setTimer((prevState) => prevState + 1)
+      if (!open) return
 
-      if (autoHideDuration && timer === autoHideDuration / 1000) {
-        onClose && onClose()
+      if (!pause) {
+        setTimer((prevState) => prevState + 1)
+
+        if (autoHideDuration && timer === autoHideDuration / 1000) {
+          onClose && onClose()
+        }
       }
     })
 
@@ -103,7 +108,11 @@ const Alert = forwardRef<HTMLDivElement, TAlertProps>(
         ref={ref}
         {...rest}
       >
-        <div className={allClassNames}>
+        <div
+          className={allClassNames}
+          onMouseEnter={() => setPause(true)}
+          onMouseLeave={() => setPause(false)}
+        >
           <div className='shrink-0'>
             {typeof icon === 'boolean' ? icon && alertIcons[color] : icon}
           </div>
