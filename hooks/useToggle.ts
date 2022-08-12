@@ -1,7 +1,16 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
-const useToggle = (initialState: boolean = false): [boolean, () => void] => {
+const useToggle = (
+  initialState: boolean = false,
+  reassignOnStateChange = true
+): [boolean, () => void] => {
   const [state, setState] = useState<boolean>(initialState)
+
+  useEffect(() => {
+    if (reassignOnStateChange) {
+      setState(initialState)
+    }
+  }, [initialState])
 
   const toggle = useCallback((): void => setState((state) => !state), [])
 

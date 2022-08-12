@@ -19,8 +19,8 @@ type TTagProps = {
   count?: number
   hasCheckbox?: boolean
   className?: string
-  onClose: () => void
-  onCheck: () => void
+  onClose?: () => void
+  onCheck?: () => void
 } & React.HTMLAttributes<HTMLSpanElement>
 
 const Tag = forwardRef<HTMLSpanElement, TTagProps>(
@@ -47,7 +47,7 @@ const Tag = forwardRef<HTMLSpanElement, TTagProps>(
           <Checkbox
             theme={theme}
             size={styles.checkboxSizes[size] as TCheckboxSizes}
-            onChange={onCheck}
+            onChange={() => onCheck && onCheck()}
             className={styles.leading[size]}
           />
         )}
@@ -58,7 +58,7 @@ const Tag = forwardRef<HTMLSpanElement, TTagProps>(
             weight='bold'
             size={styles.iconSizes[size]}
             className={clsx('text-gray-400', styles.trailing[size])}
-            onClick={onClose}
+            onClick={() => onClose && onClose()}
           />
         )}
         {action === 'count' && (
