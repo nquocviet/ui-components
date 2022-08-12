@@ -21,7 +21,7 @@ export const styles = {
       light:
         'bg-gray-50 text-gray-700 border-gray-50 ring-gray-200 enabled:hover:bg-gray-100 enabled:hover:border-gray-100 disabled:bg-gray-50 disabled:border-gray-50 disabled:text-gray-300',
       outlined:
-        'bg-white text-gray-700 border-gray-500 ring-gray-200 enabled:hover:bg-gray-100 disabled:border-gray-200 disabled:text-gray-300',
+        'bg-white text-gray-700 border-gray-300 ring-gray-200 enabled:hover:bg-gray-100 disabled:border-gray-200 disabled:text-gray-300',
       text: 'text-gray-700 border-transparent ring-gray-200 enabled:hover:border-gray-50 enabled:hover:bg-gray-50 disabled:text-gray-300',
       link: 'text-gray-700 border-transparent enabled:hover:underline disabled:text-gray-300',
     },

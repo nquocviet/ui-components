@@ -46,10 +46,11 @@ const AvatarGroup = forwardRef<HTMLDivElement, TAvatarGroupProps>(
     return (
       <div className={allClassNames} ref={ref} {...rest}>
         {children
-          .map((child: any) =>
+          .map((child: any, key) =>
             React.cloneElement(child, {
               ...child.props,
               variant,
+              key,
               ref: avatarRef,
               className: clsx('border-2 border-white', child.props.className),
             })

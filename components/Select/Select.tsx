@@ -250,5 +250,6 @@ const Select = forwardRef<HTMLInputElement, TSelectProps>(
     )
   }
 )
+Select.displayName = 'Select'
 
 export default Select
