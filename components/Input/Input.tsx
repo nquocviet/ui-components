@@ -20,7 +20,7 @@ type TInputProps = {
   error?: string
   maxLength?: number
   readOnly?: boolean
-  require?: boolean
+  required?: boolean
   disabled?: boolean
   defaultValue?: string
   leading?: ReactNode
@@ -40,7 +40,7 @@ const Input = forwardRef<HTMLLabelElement, TInputProps>(
       error,
       maxLength = MAX_LENGTH_INPUT,
       readOnly = false,
-      require = false,
+      required = false,
       disabled = false,
       leading,
       trailing,
@@ -69,7 +69,7 @@ const Input = forwardRef<HTMLLabelElement, TInputProps>(
             className='mb-1.5 font-medium text-gray-700'
           >
             {label}
-            {require && <span className='text-red-500 ml-0.5'>*</span>}
+            {required && <span className='text-red-500 ml-0.5'>*</span>}
           </Typography>
         )}
         <div className={allClassNames}>

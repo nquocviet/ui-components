@@ -19,7 +19,7 @@ type TCheckboxProps = {
   rounded?: boolean
   defaultChecked?: boolean
   disabled?: boolean
-  onChange:
+  onChange?:
     | (() => void)
     | ((event: React.ChangeEvent<HTMLInputElement>) => void)
 } & React.HTMLAttributes<HTMLInputElement>
@@ -71,7 +71,7 @@ const Checkbox = forwardRef<HTMLDivElement, TCheckboxProps>(
             onChange={(event) => {
               if (!disabled) {
                 setToggle()
-                onChange(event)
+                onChange && onChange(event)
               }
             }}
             checked={toggle}
