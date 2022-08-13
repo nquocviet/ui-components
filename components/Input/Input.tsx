@@ -18,15 +18,16 @@ type TInputProps = {
   value?: string
   placeholder?: string
   error?: string
+  hint?: string
   maxLength?: number
-  readOnly?: boolean
   required?: boolean
   disabled?: boolean
   defaultValue?: string
   leading?: ReactNode
   trailing?: ReactNode
   className?: string
-  onChange?: (() => void) | ((event: ChangeEvent<HTMLInputElement>) => void)
+  onBlur?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
+  onChange?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
 } & React.HTMLAttributes<HTMLInputElement>
 
 const Input = forwardRef<HTMLLabelElement, TInputProps>(
@@ -38,8 +39,8 @@ const Input = forwardRef<HTMLLabelElement, TInputProps>(
       label,
       placeholder,
       error,
+      hint,
       maxLength = MAX_LENGTH_INPUT,
-      readOnly = false,
       required = false,
       disabled = false,
       leading,
@@ -53,7 +54,7 @@ const Input = forwardRef<HTMLLabelElement, TInputProps>(
       styles.base,
       error
         ? styles.states.error
-        : disabled || readOnly
+        : disabled
         ? styles.states.disabled
         : styles.states.enabled,
       className
@@ -69,7 +70,7 @@ const Input = forwardRef<HTMLLabelElement, TInputProps>(
             className='mb-1.5 font-medium text-gray-700'
           >
             {label}
-            {required && <span className='text-red-500 ml-0.5'>*</span>}
+            {required && <span className='text-error-500 ml-0.5'>*</span>}
           </Typography>
         )}
         <div className={allClassNames}>
@@ -118,8 +119,13 @@ const Input = forwardRef<HTMLLabelElement, TInputProps>(
             </button>
           )}
         </div>
+        {hint && !error && (
+          <Typography fontSize='text-sm' className='mt-1.5 text-gray-500'>
+            {hint}
+          </Typography>
+        )}
         {error && (
-          <Typography fontSize='text-sm' className='mt-1.5 text-red-600'>
+          <Typography fontSize='text-sm' className='mt-1.5 text-error-600'>
             {error}
           </Typography>
         )}

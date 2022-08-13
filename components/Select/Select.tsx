@@ -129,7 +129,7 @@ const Select = forwardRef<HTMLInputElement, TSelectProps>(
               className='text-gray-700'
             >
               {label}
-              {required && <span className='text-red-500 ml-0.5'>*</span>}
+              {required && <span className='text-error-500 ml-0.5'>*</span>}
             </Typography>
           )}
         </div>
