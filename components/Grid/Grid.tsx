@@ -58,14 +58,14 @@ const Grid = forwardRef<HTMLDivElement, TGridProps>(
     const isRow: boolean = row || !column
     const allClassNames: string = clsx(
       !isRow ? styles.column : styles.row,
-      isRow && expanded ? ` ${styles.expanded}` : '',
-      isRow && justify ? ` ${styles[justify]}` : '',
-      isRow && align ? ` ${styles['align-' + align]}` : '',
-      !isRow && xs ? ` ${styles['xs-' + xs]}` : '',
-      !isRow && sm ? ` ${styles['sm-' + sm]}` : '',
-      !isRow && md ? ` ${styles['md-' + md]}` : '',
-      !isRow && lg ? ` ${styles['lg-' + lg]}` : '',
-      !isRow && xl ? ` ${styles['xl-' + xl]}` : '',
+      isRow && expanded && styles.expanded,
+      isRow && justify && styles[justify],
+      isRow && align && styles['align-' + align],
+      !isRow && xs && styles['xs-' + xs],
+      !isRow && sm && styles['sm-' + sm],
+      !isRow && md && styles['md-' + md],
+      !isRow && lg && styles['lg-' + lg],
+      !isRow && xl && styles['xl-' + xl],
       className
     )
 
