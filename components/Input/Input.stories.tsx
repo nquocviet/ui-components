@@ -63,6 +63,13 @@ export default {
       },
       control: { type: 'text' },
     },
+    hint: {
+      description: 'If hint is not empty, the input will indicate an hint.',
+      table: {
+        type: { summary: 'string' },
+      },
+      control: { type: 'text' },
+    },
     maxLength: {
       description: 'Maximum number of characters to type.',
       table: {
@@ -71,16 +78,7 @@ export default {
       },
       control: { type: 'number' },
     },
-    readOnly: {
-      description:
-        'It prevents the user from changing the value of the field (not from interacting with the field).',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-      control: { type: 'boolean' },
-    },
-    require: {
+    required: {
       description:
         'If true, the input element is required. The prop defaults to the value (false) inherited from the parent FormControl component.',
       table: {
@@ -164,8 +162,8 @@ Small.args = {
   label: 'Email',
   placeholder: 'Type your email',
   error: '',
+  hint: '',
   maxLength: 255,
-  readOnly: false,
   required: false,
   disabled: false,
   leading: null,
@@ -182,8 +180,8 @@ Medium.args = {
   label: 'Email',
   placeholder: 'Type your email',
   error: '',
+  hint: '',
   maxLength: 255,
-  readOnly: false,
   required: false,
   disabled: false,
   leading: null,

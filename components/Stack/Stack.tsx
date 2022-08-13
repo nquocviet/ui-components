@@ -89,5 +89,6 @@ const Stack = forwardRef<HTMLDivElement, TStackProps>(
     )
   }
 )
+Stack.displayName = 'Stack'
 
 export default Stack
