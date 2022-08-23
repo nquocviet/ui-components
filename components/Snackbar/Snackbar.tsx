@@ -1,26 +1,11 @@
-import React, { forwardRef, ReactNode, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { X } from 'phosphor-react'
 import clsx from 'clsx'
 import { useInterval } from '@/hooks'
 import { styles } from './Snackbar.styles'
+import { SnackbarProps } from './Snackbar.types'
 
-type TSnackbarPlacements = {
-  horizontal: 'center' | 'left' | 'right'
-  vertical: 'bottom' | 'top'
-}
-
-type TSnackbarProps = {
-  message: ReactNode
-  open?: boolean
-  autoHideDuration?: number
-  placement?: TSnackbarPlacements
-  zIndex?: number | null
-  className?: string
-  onClose?: () => void
-  onUndo?: () => void
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Snackbar = forwardRef<HTMLDivElement, TSnackbarProps>(
+const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
   (
     {
       message,

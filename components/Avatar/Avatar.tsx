@@ -1,31 +1,9 @@
 import clsx from 'clsx'
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import { styles } from './Avatar.styles'
+import { AvatarProps } from './Avatar.types'
 
-type TAvatarVariants = 'circular' | 'rounded' | 'square'
-
-type TAvatarSizes =
-  | 'xs'
-  | 'sm'
-  | 'md'
-  | 'lg'
-  | 'xl'
-  | '2xl'
-  | '3xl'
-  | '4xl'
-  | '5xl'
-
-type TAvatarProps = {
-  variant?: TAvatarVariants
-  size?: TAvatarSizes
-  src?: string
-  alt?: string
-  children?: ReactNode
-  border?: boolean
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement & HTMLImageElement>
-
-const Avatar = forwardRef<HTMLDivElement & HTMLImageElement, TAvatarProps>(
+const Avatar = forwardRef<HTMLDivElement & HTMLImageElement, AvatarProps>(
   (
     {
       variant = 'circular',

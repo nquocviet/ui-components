@@ -1,13 +1,9 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './Container.styles'
+import { ContainerProps } from './Container.types'
 
-type TContainerProps = {
-  children: ReactNode | ReactNode[]
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Container = forwardRef<HTMLDivElement, TContainerProps>(
+const Container = forwardRef<HTMLDivElement, ContainerProps>(
   ({ children, className, ...rest }, ref) => {
     const allClassNames = clsx(styles.base, className)
 

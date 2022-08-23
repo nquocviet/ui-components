@@ -1,17 +1,9 @@
 import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './Progress.styles'
+import { ProgressProps } from './Progress.types'
 
-type TProgressLabelPlacements = 'none' | 'right' | 'bottom'
-
-type TProgressProps = {
-  value: number
-  label?: string
-  labelPlacement?: TProgressLabelPlacements
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Progress = forwardRef<HTMLDivElement, TProgressProps>(
+const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   ({ value = 0, label, labelPlacement = 'none', className, ...rest }, ref) => {
     const allClassNames = clsx(className)
 

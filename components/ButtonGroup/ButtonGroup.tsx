@@ -1,30 +1,9 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './ButtonGroup.styles'
+import { ButtonGroupProps } from './ButtonGroup.types'
 
-type TButtonGroupSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
-
-type TButtonGroupColors =
-  | 'primary'
-  | 'gray'
-  | 'info'
-  | 'error'
-  | 'warning'
-  | 'success'
-
-type TButtonGroupVariants = 'contained' | 'light' | 'outlined' | 'text'
-
-type TButtonGroupProps = {
-  size?: TButtonGroupSizes
-  color?: TButtonGroupColors
-  variant?: TButtonGroupVariants
-  children: ReactNode[]
-  fluid?: boolean
-  disabled?: boolean
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const ButtonGroup = forwardRef<HTMLDivElement, TButtonGroupProps>(
+const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
   (
     {
       size = 'md',

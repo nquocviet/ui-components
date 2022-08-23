@@ -1,36 +1,13 @@
-import React, { ChangeEvent, forwardRef, ReactNode, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import clsx from 'clsx'
 import { Eye, EyeSlash } from 'phosphor-react'
 import { styles } from './Input.styles'
+import { InputProps } from './Input.types'
 import Typography from '../Typography'
 
 const MAX_LENGTH_INPUT = 255
 
-type TInputTypes = 'email' | 'text' | 'password'
-
-type TInputSizes = 'sm' | 'md'
-
-type TInputProps = {
-  type?: TInputTypes
-  size?: TInputSizes
-  name: string
-  label?: string
-  value?: string
-  placeholder?: string
-  error?: string
-  hint?: string
-  maxLength?: number
-  required?: boolean
-  disabled?: boolean
-  defaultValue?: string
-  leading?: ReactNode
-  trailing?: ReactNode
-  className?: string
-  onBlur?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
-  onChange?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
-} & React.HTMLAttributes<HTMLInputElement>
-
-const Input = forwardRef<HTMLLabelElement, TInputProps>(
+const Input = forwardRef<HTMLLabelElement, InputProps>(
   (
     {
       type = 'text',

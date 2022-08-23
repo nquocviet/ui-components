@@ -1,29 +1,11 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { Circle } from 'phosphor-react'
 import { useId } from '@/hooks'
 import { styles } from './Radio.styles'
+import { RadioProps } from './Radio.types'
 
-type TRadioSizes = 'xs' | 'sm' | 'md' | 'lg'
-
-type TRadioThemes = 'light' | 'dark'
-
-type TRadioProps = {
-  size?: TRadioSizes | number
-  iconSize?: number
-  theme?: TRadioThemes
-  name: string
-  value: string
-  label?: ReactNode
-  description?: ReactNode
-  className?: string
-  disabled?: boolean
-  onChange:
-    | (() => void)
-    | ((event: React.ChangeEvent<HTMLInputElement>) => void)
-} & React.HTMLAttributes<HTMLInputElement>
-
-const Radio = forwardRef<HTMLDivElement, TRadioProps>(
+const Radio = forwardRef<HTMLDivElement, RadioProps>(
   (
     {
       size = 'md',

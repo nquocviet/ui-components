@@ -1,28 +1,10 @@
-import React, { ChangeEvent, forwardRef, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import clsx from 'clsx'
-import { styles } from './Textarea.styles'
 import { Typography } from '..'
+import { styles } from './Textarea.styles'
+import { TextareaProps } from './Textarea.types'
 
-type TTextareaSizes = 'sm' | 'md'
-
-interface ITextareaProps extends React.HTMLAttributes<HTMLTextAreaElement> {
-  size?: TTextareaSizes
-  name: string
-  label?: string
-  value?: string
-  placeholder?: string
-  className?: string
-  error?: string
-  hint?: string
-  disabled?: boolean
-  required?: boolean
-  defaultValue?: string
-  rows?: number
-  onBlur?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
-  onChange?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
-}
-
-const Textarea = forwardRef<HTMLTextAreaElement, ITextareaProps>(
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {
       size = 'sm',

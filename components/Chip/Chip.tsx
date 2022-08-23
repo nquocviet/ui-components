@@ -1,26 +1,10 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './Chip.styles'
 import { X } from 'phosphor-react'
+import { ChipProps } from './Chip.types'
 
-type TChipVariants = 'contained' | 'light' | 'outlined'
-
-type TChipSizes = 'sm' | 'md' | 'lg'
-
-type TChipColors = 'primary' | 'gray' | 'info' | 'error' | 'warning' | 'success'
-
-type TChipProps = {
-  variant?: TChipVariants
-  size?: TChipSizes
-  color?: TChipColors
-  label: string
-  leading?: ReactNode
-  trailing?: ReactNode
-  className?: string
-  onDelete?: () => void
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Chip = forwardRef<HTMLDivElement, TChipProps>(
+const Chip = forwardRef<HTMLDivElement, ChipProps>(
   (
     {
       variant = 'contained',

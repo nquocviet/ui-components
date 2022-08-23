@@ -1,19 +1,9 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './Divider.styles'
+import { DividerProps } from './Divider.types'
 
-type TDividerTypes = 'single' | 'dual' | 'filled'
-
-type TDividerAligns = 'left' | 'center' | 'right'
-
-type TDividerProps = {
-  children?: ReactNode
-  type?: TDividerTypes
-  align?: TDividerAligns
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Divider = forwardRef<HTMLDivElement, TDividerProps>(
+const Divider = forwardRef<HTMLDivElement, DividerProps>(
   (
     { children, type = 'single', align = 'center', className, ...rest },
     ref

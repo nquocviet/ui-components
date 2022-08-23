@@ -1,39 +1,9 @@
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
-import React, { forwardRef, ReactNode } from 'react'
 import { styles } from './Badge.styles'
+import { BadgeProps } from './Badge.types'
 
-type TBadgeVariants = 'standard' | 'dot'
-
-type TBadgeSizes = 'sm' | 'md' | 'lg'
-
-type TBadgeDotSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
-
-type TBadgePlacements = {
-  horizontal: 'left' | 'right'
-  vertical: 'bottom' | 'top'
-}
-
-type TBadgeColors =
-  | 'primary'
-  | 'gray'
-  | 'info'
-  | 'error'
-  | 'warning'
-  | 'success'
-
-type TBadgeProps = {
-  variant?: TBadgeVariants
-  size?: TBadgeSizes
-  dotSize?: TBadgeDotSizes
-  color?: TBadgeColors
-  badgeContent: ReactNode
-  children: ReactNode
-  maxCount?: number
-  placement?: TBadgePlacements
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Badge = forwardRef<HTMLDivElement, TBadgeProps>(
+const Badge = forwardRef<HTMLDivElement, BadgeProps>(
   (
     {
       variant = 'standard',

@@ -1,60 +1,9 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './Typography.styles'
+import { TypographyProps } from './Typography.types'
 
-type TStyles = {
-  [key: string]: React.CSSProperties
-}
-
-type TTypographyVariants =
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'p'
-  | 'span'
-  | 'div'
-
-type TTypographyAligns = 'center' | 'left' | 'right' | 'justify'
-
-type TTypographyWeights =
-  | 'light'
-  | 'regular'
-  | 'medium'
-  | 'semibold'
-  | 'bold'
-  | 'extrabold'
-  | 'black'
-
-type TTypographyFontSizes =
-  | 'text-2xs'
-  | 'text-xs'
-  | 'text-sm'
-  | 'text-md'
-  | 'text-lg'
-  | 'text-xl'
-  | 'display-xs'
-  | 'display-sm'
-  | 'display-md'
-  | 'display-lg'
-  | 'display-xl'
-  | 'display-2xl'
-
-type TTypographyProps = {
-  children: ReactNode
-  variant?: TTypographyVariants
-  align?: TTypographyAligns
-  weight?: TTypographyWeights
-  fontSize?: TTypographyFontSizes
-  gutter?: boolean
-  noWrap?: boolean
-  className?: string
-  style?: React.CSSProperties | TStyles
-} & React.HTMLAttributes<HTMLBaseElement>
-
-const Typography = forwardRef<HTMLBaseElement, TTypographyProps>(
+const Typography = forwardRef<HTMLBaseElement, TypographyProps>(
   (
     {
       children,
@@ -65,7 +14,6 @@ const Typography = forwardRef<HTMLBaseElement, TTypographyProps>(
       gutter = false,
       noWrap = false,
       className,
-      style,
       ...rest
     },
     ref
@@ -81,7 +29,7 @@ const Typography = forwardRef<HTMLBaseElement, TTypographyProps>(
 
     return React.createElement(
       variant,
-      { className: allClassNames, style, ref, ...rest },
+      { className: allClassNames, ref, ...rest },
       children
     )
   }

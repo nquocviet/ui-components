@@ -1,26 +1,9 @@
-import React, {
-  forwardRef,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { styles } from './AvatarGroup.styles'
+import { AvatarGroupProps } from './AvatarGroup.types'
 
-type TAvatarGroupVariants = 'circular' | 'rounded' | 'square'
-
-type TAvatarGroupSpacings = 'sm' | 'md' | 'lg'
-
-type TAvatarGroupProps = {
-  variant?: TAvatarGroupVariants
-  max?: number
-  spacing?: TAvatarGroupSpacings
-  children: ReactNode[]
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const AvatarGroup = forwardRef<HTMLDivElement, TAvatarGroupProps>(
+const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
   (
     {
       variant = 'circular',
