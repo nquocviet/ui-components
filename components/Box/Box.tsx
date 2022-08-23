@@ -1,16 +1,9 @@
-import React, { forwardRef, ReactNode } from 'react'
-import './Box.module.css'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
+import './Box.module.css'
+import { BoxProps } from './Box.types'
 
-type TBoxProps = {
-  width?: number | string
-  height?: number | string
-  ratio?: number | string
-  children?: ReactNode
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Box = forwardRef<HTMLDivElement, TBoxProps>(
+const Box = forwardRef<HTMLDivElement, BoxProps>(
   ({ children, width, height, ratio = 1 / 1, className, ...rest }, ref) => {
     const isAbsolute = className?.includes('absolute')
     const allClassNames = clsx(

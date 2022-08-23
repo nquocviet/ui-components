@@ -1,38 +1,10 @@
-import React, { forwardRef, ReactNode, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { styles } from './Tooltip.styles'
+import { TooltipProps } from './Tooltip.types'
 
-type TTooltipPlacements =
-  | 'top'
-  | 'top-left'
-  | 'top-right'
-  | 'right'
-  | 'right-top'
-  | 'right-bottom'
-  | 'bottom'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'left'
-  | 'left-top'
-  | 'left-bottom'
-
-type TTooltipThemes = 'light' | 'dark'
-
-type TTooltipProps = {
-  children: ReactNode
-  theme?: TTooltipThemes
-  title: ReactNode
-  description?: ReactNode
-  autoAdjustOverflow?: boolean
-  placement?: TTooltipPlacements
-  maxWidth?: number
-  mouseEnterDelay?: number
-  zIndex?: number | null
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Tooltip = forwardRef<HTMLDivElement, TTooltipProps>(
+const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
   (
     {
       children,

@@ -1,41 +1,9 @@
-import React, { forwardRef, ReactNode, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { Info, Warning, WarningCircle, CheckCircle, X } from 'phosphor-react'
 import clsx from 'clsx'
 import { useInterval } from '@/hooks'
 import { styles } from './Alert.styles'
-
-type TAlertColors =
-  | 'primary'
-  | 'gray'
-  | 'info'
-  | 'error'
-  | 'warning'
-  | 'success'
-
-type TAlertVariants = 'contained' | 'outlined'
-
-type TAlertPlacements = {
-  horizontal: 'center' | 'left' | 'right'
-  vertical: 'bottom' | 'top'
-}
-
-type TAlertProps = {
-  color?: TAlertColors
-  variant?: TAlertVariants
-  icon?: JSX.Element | boolean
-  title: ReactNode
-  description?: ReactNode
-  action?: ReactNode
-  width?: string
-  open?: boolean
-  closeButton?: boolean
-  floating?: boolean
-  autoHideDuration?: number
-  placement?: TAlertPlacements
-  zIndex?: number | null
-  className?: string
-  onClose?: () => void
-} & React.HTMLAttributes<HTMLDivElement>
+import { AlertProps } from './Alert.types'
 
 const alertIcons = {
   primary: <Info size={20} />,
@@ -46,7 +14,7 @@ const alertIcons = {
   success: <CheckCircle size={20} />,
 }
 
-const Alert = forwardRef<HTMLDivElement, TAlertProps>(
+const Alert = forwardRef<HTMLDivElement, AlertProps>(
   (
     {
       color = 'primary',

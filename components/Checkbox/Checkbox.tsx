@@ -1,30 +1,11 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { Check } from 'phosphor-react'
 import { useId, useToggle } from '@/hooks'
 import { styles } from './Checkbox.styles'
+import { CheckboxProps } from './Checkbox.types'
 
-export type TCheckboxSizes = 'xs' | 'sm' | 'md' | 'lg'
-
-type TCheckboxThemes = 'light' | 'dark'
-
-type TCheckboxProps = {
-  size?: TCheckboxSizes | number
-  iconSize?: number
-  theme?: TCheckboxThemes
-  value?: string
-  label?: ReactNode
-  description?: ReactNode
-  className?: string
-  rounded?: boolean
-  defaultChecked?: boolean
-  disabled?: boolean
-  onChange?:
-    | (() => void)
-    | ((event: React.ChangeEvent<HTMLInputElement>) => void)
-} & React.HTMLAttributes<HTMLInputElement>
-
-const Checkbox = forwardRef<HTMLDivElement, TCheckboxProps>(
+const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
   (
     {
       size = 'md',

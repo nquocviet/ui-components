@@ -1,19 +1,10 @@
 import React, { forwardRef } from 'react'
 import clsx from 'clsx'
-import { styles } from './Spinner.styles'
 import stylesModule from './Spinner.module.css'
+import { styles } from './Spinner.styles'
+import { SpinnerProps } from './Spinner.types'
 
-type TSpinnerTypes = 'circular' | 'dash' | 'dots'
-
-type TSpinnerSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-
-type TSpinnerProps = {
-  type?: TSpinnerTypes
-  size?: TSpinnerSizes
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Spinner = forwardRef<HTMLDivElement, TSpinnerProps>(
+const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
   ({ type = 'circular', size = 'md', className, ...rest }, ref) => {
     const [box, line, space] = styles.sizes[size]
     const isAbsolute = (className as string).includes('absolute')

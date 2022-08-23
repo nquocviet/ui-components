@@ -1,44 +1,12 @@
-import React, {
-  forwardRef,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { CaretUp, CaretDown, Check } from 'phosphor-react'
 import { useOnClickOutside } from '@/hooks'
 import { Checkbox, Typography, Tag } from '..'
 import { styles } from './Select.styles'
+import { OptionType, SelectProps } from './Select.types'
 
-type TOption = {
-  label: string
-  value: string
-}
-
-type TSelectSizes = 'sm' | 'md'
-
-type TSelectProps = {
-  options: TOption[]
-  size?: TSelectSizes
-  defaultOption?: TOption | TOption[] | {}
-  label?: string
-  name: string
-  placeholder?: string
-  maxHeight?: number
-  maxItems?: number
-  disabled?: boolean
-  multiple?: boolean
-  required?: boolean
-  error?: string
-  leading?: ReactNode
-  trailing?: ReactNode
-  className?: string
-  onChange: ((value: any) => void) | ((values: any[]) => void)
-  onRemove?: () => void
-} & React.HTMLAttributes<HTMLInputElement>
-
-const Select = forwardRef<HTMLInputElement, TSelectProps>(
+const Select = forwardRef<HTMLInputElement, SelectProps>(
   (
     {
       options,
@@ -63,7 +31,7 @@ const Select = forwardRef<HTMLInputElement, TSelectProps>(
     ref
   ) => {
     const [optionSelected, setOptionSelected] = useState<
-      TOption | TOption[] | {}
+      OptionType | OptionType[] | {}
     >(defaultOption ? defaultOption : multiple ? [] : {})
     const [showOptions, setShowOptions] = useState<boolean>(false)
     const selectRef = useRef(null)
@@ -77,8 +45,8 @@ const Select = forwardRef<HTMLInputElement, TSelectProps>(
         : styles.states.enabled,
       className
     )
-    const _optionSelected = optionSelected as TOption
-    const _optionsSelected = optionSelected as TOption[]
+    const _optionSelected = optionSelected as OptionType
+    const _optionsSelected = optionSelected as OptionType[]
 
     const handleClose = () => setShowOptions(false)
 
@@ -99,7 +67,7 @@ const Select = forwardRef<HTMLInputElement, TSelectProps>(
       const option: any = { value, label }
 
       if (multiple) {
-        const _optionsSelected = optionSelected as TOption[]
+        const _optionsSelected = optionSelected as OptionType[]
         const optionIndex = _optionsSelected.findIndex(
           (option) => option.value === value
         )

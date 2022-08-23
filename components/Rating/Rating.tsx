@@ -1,30 +1,10 @@
-import React, { forwardRef, ReactNode, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import clsx from 'clsx'
 import { Star } from 'phosphor-react'
 import { styles } from './Rating.styles'
+import { RatingProps } from './Rating.types'
 
-type TRatingPrecisions = 'full' | 'half'
-
-type TRatingSizes = 'sm' | 'md' | 'lg'
-
-type TRatingProps = {
-  defaultValue?: number
-  precision?: TRatingPrecisions
-  size?: TRatingSizes
-  disabled?: boolean
-  readOnly?: boolean
-  max?: number
-  color?: string
-  className?: string
-  icon?: ReactNode
-  emptyIcon?: ReactNode
-  leading?: ReactNode
-  trailing?: ReactNode
-  onChange?: (rate: number) => void
-  onHover?: (rate: number) => void
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Rating = forwardRef<HTMLDivElement, TRatingProps>(
+const Rating = forwardRef<HTMLDivElement, RatingProps>(
   (
     {
       defaultValue = 0,

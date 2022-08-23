@@ -1,18 +1,9 @@
 import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { styles } from './Skeleton.styles'
+import { SkeletonProps } from './Skeleton.types'
 
-type TSkeletonVariants = 'text' | 'circular' | 'rectangular' | 'rounded'
-
-type TSkeletonProps = {
-  variant?: TSkeletonVariants
-  width?: number | string
-  height?: number | string
-  animation?: boolean
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Skeleton = forwardRef<HTMLDivElement, TSkeletonProps>(
+const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   (
     {
       variant = 'rectangular',

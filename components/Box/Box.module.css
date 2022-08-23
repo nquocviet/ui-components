@@ -9,6 +9,7 @@
 
 @supports (--custom: property) {
   [style*='--aspect-ratio'] {
+    position: relative;
     overflow: hidden;
   }
 

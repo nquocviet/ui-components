@@ -1,29 +1,16 @@
-import React, { forwardRef, ReactNode, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { CaretRight, DotsThree } from 'phosphor-react'
 import { styles } from './Breadcrumbs.styles'
 import Button from '../Button'
 import clsx from 'clsx'
-
-type TBreadcrumbsType = 'text' | 'line'
-
-type TBreadcrumbsSeparator = 'chevron' | 'slash'
-
-type TBreadcrumbsProps = {
-  type?: TBreadcrumbsType
-  separator?: TBreadcrumbsSeparator | ReactNode | 'string'
-  maxItems?: number
-  itemsAfterCollapse?: number
-  itemsBeforeCollapse?: number
-  children: ReactNode[]
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+import { BreadcrumbsProps } from './Breadcrumbs.types'
 
 const separators = {
   chevron: <CaretRight size={12} />,
   slash: '/',
 }
 
-const Breadcrumbs = forwardRef<HTMLDivElement, TBreadcrumbsProps>(
+const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
   (
     {
       type = 'text',

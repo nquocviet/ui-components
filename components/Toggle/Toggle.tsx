@@ -1,27 +1,10 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { useToggle } from '@/hooks'
 import { styles } from './Toggle.styles'
+import { ToggleProps } from './Toggle.types'
 
-type TToggleSizes = 'sm' | 'md' | 'lg'
-
-type TToggleThemes = 'light' | 'dark'
-
-type TToggleProps = {
-  size?: TToggleSizes | number
-  spacing?: number
-  theme?: TToggleThemes
-  label?: ReactNode
-  description?: ReactNode
-  className?: string
-  defaultChecked?: boolean
-  disabled?: boolean
-  onChange:
-    | (() => void)
-    | ((event: React.ChangeEvent<HTMLInputElement>) => void)
-} & React.HTMLAttributes<HTMLInputElement>
-
-const Toggle = forwardRef<HTMLDivElement, TToggleProps>(
+const Toggle = forwardRef<HTMLDivElement, ToggleProps>(
   (
     {
       size = 'md',

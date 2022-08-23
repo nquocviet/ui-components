@@ -1,42 +1,9 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import styles from './Stack.module.css'
+import { StackProps } from './Stack.types'
 
-type TStackDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
-
-type TStackAlignment =
-  | 'flex-start'
-  | 'center'
-  | 'flex-end'
-  | 'stretch'
-  | 'baseline'
-
-type TStackJustify =
-  | 'flex-start'
-  | 'center'
-  | 'flex-end'
-  | 'space-between'
-  | 'space-around'
-  | 'space-evenly'
-
-type TStackSpacing = {
-  xs?: number
-  sm?: number
-  md?: number
-  lg?: number
-  xl?: number
-}
-
-type TStackProps = {
-  direction?: TStackDirection
-  align?: TStackAlignment
-  justify?: TStackJustify
-  spacing?: number | TStackSpacing
-  children: ReactNode[]
-  className?: string
-} & React.HTMLAttributes<HTMLDivElement>
-
-const Stack = forwardRef<HTMLDivElement, TStackProps>(
+const Stack = forwardRef<HTMLDivElement, StackProps>(
   (
     {
       direction = 'row',
