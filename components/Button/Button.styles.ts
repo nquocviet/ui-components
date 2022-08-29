@@ -19,7 +19,7 @@ export const styles = {
       gradient:
         'enabled:bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-[length:200%_auto] text-white border-transparent ring-gray-200 enabled:hover:bg-[right_100%] disabled:bg-gray-300 disabled:border-gray-300',
       light:
-        'bg-gray-50 text-gray-700 border-gray-50 ring-gray-200 enabled:hover:bg-gray-100 enabled:hover:border-gray-100 disabled:bg-gray-50 disabled:border-gray-50 disabled:text-gray-300',
+        'bg-gray-100 text-gray-700 border-gray-100 ring-gray-200 enabled:hover:bg-gray-200 enabled:hover:border-gray-100 disabled:bg-gray-50 disabled:border-gray-50 disabled:text-gray-300',
       outlined:
         'bg-white text-gray-700 border-gray-300 ring-gray-200 enabled:hover:bg-gray-100 disabled:border-gray-200 disabled:text-gray-300',
       text: 'text-gray-700 border-transparent ring-gray-200 enabled:hover:border-gray-50 enabled:hover:bg-gray-50 disabled:text-gray-300',
@@ -91,12 +91,12 @@ export const styles = {
     '2xl': 'px-6 py-4 rounded-lg',
   },
   iconSizes: {
-    xs: 'p-1.5 rounded-md',
-    sm: 'p-2 rounded-md',
-    md: 'p-2.5 rounded-lg',
-    lg: 'p-3 rounded-lg',
-    xl: 'p-3.5 rounded-lg',
-    '2xl': 'p-4 rounded-lg',
+    xs: 'p-1.5 min-w-[34px] rounded-md',
+    sm: 'p-2 min-w-[38px] rounded-md',
+    md: 'p-2.5 min-w-[42px] rounded-lg',
+    lg: 'p-3 min-w-[50px] rounded-lg',
+    xl: 'p-3.5 min-w-[54px] rounded-lg',
+    '2xl': 'p-4 min-w-[62px] rounded-lg',
   },
   width: {
     auto: 'w-auto',
