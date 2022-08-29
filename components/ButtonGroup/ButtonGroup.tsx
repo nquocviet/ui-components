@@ -25,22 +25,26 @@ const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
 
     return (
       <div className={allClassNames} ref={ref} {...rest}>
-        {children.map((child: any, key) =>
-          React.cloneElement(child, {
-            key,
-            size,
-            color,
-            variant,
-            disabled,
-            className: clsx(
-              child.props.className,
-              styles.colors[color][variant],
-              'first-of-type:rounded-l-lg first-of-type:border-l last-of-type:rounded-r-lg last-of-type:border-r border-l-0 border-r-0',
-              key < children.length - 1 &&
-                'after:absolute after:right-0 after:h-full after:border-r'
-            ),
-          })
-        )}
+        {children
+          .flat(Infinity)
+          .filter(Boolean)
+          .map((child: any, key) =>
+            React.cloneElement(child, {
+              key,
+              size,
+              color,
+              variant,
+              disabled,
+              ...child.props,
+              className: clsx(
+                child.props && child.props.className,
+                styles.colors[color][variant],
+                'first-of-type:rounded-l-lg first-of-type:border-l last-of-type:rounded-r-lg last-of-type:border-r after:absolute border-l-0 border-r-0',
+                key < children.flat(Infinity).filter(Boolean).length - 1 &&
+                  'after:right-0 after:h-full after:border-r'
+              ),
+            })
+          )}
       </div>
     )
   }

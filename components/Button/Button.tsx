@@ -35,7 +35,7 @@ const Button = forwardRef<
       styles.width[fluid ? 'fluid' : 'auto'],
       variant !== 'link' &&
         (onlyIcon ? styles.iconSizes[size] : styles.sizes[size]),
-      rounded && 'rounded-full',
+      rounded && '!rounded-full',
       className
     )
 
