@@ -32,7 +32,10 @@ export default {
         type: { summary: 'sm | md' },
         defaultValue: { summary: 'sm' },
       },
-      control: { type: 'text' },
+      control: {
+        type: 'select',
+        options: ['sm', 'md'],
+      },
     },
     name: {
       description: 'Name attribute of the input element.',

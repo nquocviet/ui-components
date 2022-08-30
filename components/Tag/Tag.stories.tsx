@@ -20,7 +20,10 @@ export default {
         type: { summary: 'sm | md | lg' },
         defaultValue: { summary: 'md' },
       },
-      control: { type: 'select', options: ['sm', 'md', 'lg'] },
+      control: {
+        type: 'select',
+        options: ['sm', 'md', 'lg'],
+      },
     },
     theme: {
       description: 'The theme of the checkbox. It supports by default colors.',
