@@ -37,6 +37,11 @@ export const styles = {
     md: 'text-sm px-2.5 py-0.5',
     lg: 'text-sm px-3 py-1',
   },
+  rounded: {
+    sm: 'text-xs px-[7px] py-0.5',
+    md: 'text-sm px-2 py-0.5',
+    lg: 'text-sm px-2.5 py-1',
+  },
   leading: {
     sm: '-ml-[5px]',
     md: '-ml-1.5',

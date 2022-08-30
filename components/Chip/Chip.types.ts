@@ -16,9 +16,10 @@ export type ChipProps = {
   variant?: ChipVariants
   size?: ChipSizes
   color?: ChipColors
-  label: string
+  label: string | number
   leading?: ReactNode
   trailing?: ReactNode
+  rounded?: boolean
   className?: string
   onDelete?: () => void
 } & React.HTMLAttributes<HTMLDivElement>

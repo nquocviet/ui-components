@@ -13,6 +13,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(
       label,
       leading,
       trailing,
+      rounded,
       className,
       onClick,
       onDelete,
@@ -23,7 +24,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(
     const allClassNames = clsx(
       styles.base,
       styles.colors[color][variant],
-      styles.sizes[size],
+      rounded ? styles.rounded[size] : styles.sizes[size],
       onClick && 'cursor-pointer',
       className
     )
