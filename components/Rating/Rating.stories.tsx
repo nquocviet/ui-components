@@ -105,7 +105,7 @@ export default {
     docs: {
       description: {
         component:
-          "Ratings provide insight regarding others' opinions and experiences, and can allow the user to submit a rating of their own.",
+          "Ratings provide insight regarding other's opinions and experiences, and can allow the user to submit a rating of their own.",
       },
     },
   },

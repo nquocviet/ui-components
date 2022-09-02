@@ -33,7 +33,7 @@ export default {
     docs: {
       description: {
         component:
-          'The Box component serves as a wrapper component for most of the CSS utility needs.',
+          'AspectRatio allows to maintain consistent width/height ratio. It can be used to display images, maps, videos and other media.',
       },
     },
   },
