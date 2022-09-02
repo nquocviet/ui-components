@@ -1,9 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Box from '@/components/Box'
+import AspectRatio from '@/components/AspectRatio'
+import Box from '../Box'
 
 export default {
-  title: 'Design System/Components/Box',
-  component: Box,
+  title: 'Design System/Components/AspectRatio',
+  component: AspectRatio,
   argTypes: {
     children: {
       description: 'The content of the component.',
@@ -11,6 +12,14 @@ export default {
         type: { summary: 'node' },
       },
       control: { type: 'text' },
+    },
+    ratio: {
+      description: 'The ratio of the component.',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 1 / 1 },
+      },
+      control: { type: 'number' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',
@@ -28,14 +37,14 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Box>
+} as ComponentMeta<typeof AspectRatio>
 
-const Template: ComponentStory<typeof Box> = (arg) => (
-  <Box
-    className='bg-primary-200'
-    style={{ width: '150px', height: '150px' }}
-    {...arg}
-  />
+const Template: ComponentStory<typeof AspectRatio> = (arg) => (
+  <AspectRatio ratio={16 / 9} className='w-1/2' {...arg}>
+    <Box className='bg-primary-200'>
+      &#60;AspectRatio ratio=&#123;16 / 9&#125; /&#62;
+    </Box>
+  </AspectRatio>
 )
 
 export const Example = Template.bind({})

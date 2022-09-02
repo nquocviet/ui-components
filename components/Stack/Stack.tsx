@@ -3,6 +3,9 @@ import clsx from 'clsx'
 import styles from './Stack.module.css'
 import { StackProps } from './Stack.types'
 
+const BREAKPOINTS = ['xs', 'sm', 'md', 'lg', 'xl']
+const DEFAULT_SPACING = 16
+
 const Stack = forwardRef<HTMLDivElement, StackProps>(
   (
     {
@@ -24,29 +27,35 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
       className
     )
 
+    const defineSpacingVariables = () => {
+      const allSpacings = BREAKPOINTS.reduce((prev, curr, index) => {
+        const breakpoint = BREAKPOINTS[index - 1]
+
+        if (!spacing[curr]) {
+          if (!spacing[breakpoint]) {
+            return { ...prev, [curr]: DEFAULT_SPACING }
+          }
+
+          return { ...prev, [curr]: spacing[breakpoint] }
+        }
+
+        return { ...prev, [curr]: spacing[curr] }
+      }, {})
+
+      return Object.entries(allSpacings).reduce((prev, curr) => {
+        const [key, value] = curr
+
+        return { ...prev, [`--${key}-stack-spacing` as any]: `${value}px` }
+      }, {})
+    }
+
     return (
       <div
         className={allClassNames}
         style={{
           ...(typeof spacing === 'number'
             ? { ['--stack-spacing' as any]: `${spacing}px` }
-            : {
-                ...(spacing.xs && {
-                  ['--xs-stack-spacing' as any]: `${spacing.xs}px`,
-                }),
-                ...(spacing.sm && {
-                  ['--sm-stack-spacing' as any]: `${spacing.sm}px`,
-                }),
-                ...(spacing.md && {
-                  ['--md-stack-spacing' as any]: `${spacing.md}px`,
-                }),
-                ...(spacing.lg && {
-                  ['--lg-stack-spacing' as any]: `${spacing.lg}px`,
-                }),
-                ...(spacing.xl && {
-                  ['--xl-stack-spacing' as any]: `${spacing.xl}px`,
-                }),
-              }),
+            : defineSpacingVariables()),
         }}
         ref={ref}
         {...rest}
