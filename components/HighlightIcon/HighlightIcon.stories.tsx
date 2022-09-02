@@ -45,7 +45,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Button component for user interaction.',
+        component: 'Render icon inside element with default colors.',
       },
     },
   },
