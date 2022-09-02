@@ -18,7 +18,7 @@ const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
     const [avatarClassNames, setAvatarClassNames] = useState('')
     const allClassNames = clsx(styles.base, styles.spacings[spacing], className)
     const avatarRef = useRef(null)
-    const isOverflow = children.length > max
+    const isOverflow = Array.isArray(children) && children.length > max
 
     useEffect(() => {
       if (avatarRef && avatarRef.current) {
@@ -28,17 +28,32 @@ const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
 
     return (
       <div className={allClassNames} ref={ref} {...rest}>
-        {children
-          .map((child: any, key) =>
-            React.cloneElement(child, {
-              ...child.props,
+        {Array.isArray(children)
+          ? children
+              .flat(Infinity)
+              .filter(Boolean)
+              .map((child: any, key) =>
+                React.cloneElement(child, {
+                  ...child.props,
+                  variant,
+                  key,
+                  ref: avatarRef,
+                  className: clsx(
+                    'border-2 border-white',
+                    child.props.className
+                  ),
+                })
+              )
+              .slice(0, max)
+          : React.cloneElement(children as any, {
+              ...(children as any).props,
               variant,
-              key,
               ref: avatarRef,
-              className: clsx('border-2 border-white', child.props.className),
-            })
-          )
-          .slice(0, max)}
+              className: clsx(
+                'border-2 border-white',
+                (children as any).props.className
+              ),
+            })}
         {isOverflow && (
           <div
             className={clsx(
@@ -53,6 +68,7 @@ const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
     )
   }
 )
+
 AvatarGroup.displayName = 'AvatarGroup'
 
 export default AvatarGroup

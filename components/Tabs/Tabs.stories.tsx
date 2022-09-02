@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Tabs from '@/components/Tabs'
-import TabPanel from '@/components/TabPanel'
 import { action } from '@storybook/addon-actions'
+
+const { TabPanel } = Tabs
 
 export default {
   title: 'Design System/Components/Tabs',

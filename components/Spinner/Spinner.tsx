@@ -89,6 +89,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
     )
   }
 )
+
 Spinner.displayName = 'Spinner'
 
 export default Spinner

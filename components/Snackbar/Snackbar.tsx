@@ -88,6 +88,7 @@ const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
     )) as JSX.Element
   }
 )
+
 Snackbar.displayName = 'Snackbar'
 
 export default Snackbar

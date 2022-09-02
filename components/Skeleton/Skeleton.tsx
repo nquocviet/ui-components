@@ -35,6 +35,7 @@ const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
     )
   }
 )
+
 Skeleton.displayName = 'Skeleton'
 
 export default Skeleton

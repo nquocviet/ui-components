@@ -45,6 +45,7 @@ const Avatar = forwardRef<HTMLDivElement & HTMLImageElement, AvatarProps>(
     )
   }
 )
+
 Avatar.displayName = 'Avatar'
 
 export default Avatar

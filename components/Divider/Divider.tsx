@@ -22,6 +22,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
     )
   }
 )
+
 Divider.displayName = 'Divider'
 
 export default Divider

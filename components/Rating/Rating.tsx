@@ -132,6 +132,7 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
     )
   }
 )
+
 Rating.displayName = 'Rating'
 
 export default Rating

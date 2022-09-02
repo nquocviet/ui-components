@@ -72,6 +72,7 @@ const Toggle = forwardRef<HTMLDivElement, ToggleProps>(
     )
   }
 )
+
 Toggle.displayName = 'Toggle'
 
 export default Toggle
