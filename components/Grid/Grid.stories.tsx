@@ -130,32 +130,32 @@ export default {
 const Template: ComponentStory<typeof Grid> = () => (
   <Grid row>
     <Grid xs={4} column>
-      <Box ratio='none' height={50} className='bg-gray-100'>
+      <Box style={{ height: '50px' }} className='bg-gray-100'>
         Column
       </Box>
     </Grid>
     <Grid xs={4} column>
-      <Box ratio='none' height={50} className='bg-gray-100'>
+      <Box style={{ height: '50px' }} className='bg-gray-100'>
         Column
       </Box>
     </Grid>
     <Grid xs={4} column>
-      <Box ratio='none' height={50} className='bg-gray-100'>
+      <Box style={{ height: '50px' }} className='bg-gray-100'>
         Column
       </Box>
     </Grid>
     <Grid xs={4} column>
-      <Box ratio='none' height={50} className='bg-gray-100'>
+      <Box style={{ height: '50px' }} className='bg-gray-100'>
         Column
       </Box>
     </Grid>
     <Grid xs={4} column>
-      <Box ratio='none' height={50} className='bg-gray-100'>
+      <Box style={{ height: '50px' }} className='bg-gray-100'>
         Column
       </Box>
     </Grid>
     <Grid xs={4} column>
-      <Box ratio='none' height={50} className='bg-gray-100'>
+      <Box style={{ height: '50px' }} className='bg-gray-100'>
         Column
       </Box>
     </Grid>

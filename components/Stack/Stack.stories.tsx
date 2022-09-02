@@ -88,13 +88,13 @@ export default {
 
 const Template: ComponentStory<typeof Stack> = (args) => (
   <Stack {...args}>
-    <Box width={80} height={40} className='bg-primary-200'>
+    <Box style={{ width: '80px', height: '40px' }} className='bg-primary-200'>
       Item 1
     </Box>
-    <Box width={80} height={40} className='bg-primary-200'>
+    <Box style={{ width: '80px', height: '40px' }} className='bg-primary-200'>
       Item 2
     </Box>
-    <Box width={80} height={40} className='bg-primary-200'>
+    <Box style={{ width: '80px', height: '40px' }} className='bg-primary-200'>
       Item 3
     </Box>
   </Stack>
