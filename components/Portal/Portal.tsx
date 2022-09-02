@@ -40,6 +40,7 @@ const Portal = forwardRef<HTMLBodyElement | HTMLDivElement, PortalProps>(
     return ReactDOM.createPortal(children, containerElement)
   }
 )
+
 Portal.displayName = 'Portal'
 
 export default Portal

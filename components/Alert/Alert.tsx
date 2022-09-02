@@ -105,6 +105,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
     )) as JSX.Element
   }
 )
+
 Alert.displayName = 'Alert'
 
 export default Alert

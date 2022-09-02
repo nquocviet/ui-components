@@ -8,6 +8,6 @@ export type AvatarGroupProps = {
   variant?: AvatarGroupVariants
   max?: number
   spacing?: AvatarGroupSpacings
-  children: ReactNode[]
+  children: ReactNode | ReactNode[]
   className?: string
 } & React.HTMLAttributes<HTMLDivElement>

@@ -3,8 +3,17 @@ import React, { forwardRef, useState } from 'react'
 import { styles } from './Tabs.styles'
 import { TabsProps } from './Tabs.types'
 import { Chip, Stack } from '..'
+import TabPanel from './TabPanel'
+import { ForwardRefWithStaticComponent } from 'utils/ForwardRefWithStaticComponent'
 
-const Tabs = forwardRef<HTMLDivElement, TabsProps>(
+type TabsComponent = ForwardRefWithStaticComponent<
+  TabsProps,
+  {
+    TabPanel: typeof TabPanel
+  }
+>
+
+const Tabs: TabsComponent = forwardRef<HTMLDivElement, TabsProps>(
   (
     {
       children,
@@ -100,7 +109,9 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(
       </div>
     )
   }
-)
+) as any
+
+Tabs.TabPanel = TabPanel
 Tabs.displayName = 'Tabs'
 
 export default Tabs

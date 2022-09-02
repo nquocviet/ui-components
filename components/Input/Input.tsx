@@ -110,6 +110,7 @@ const Input = forwardRef<HTMLLabelElement, InputProps>(
     )
   }
 )
+
 Input.displayName = 'Input'
 
 export default Input

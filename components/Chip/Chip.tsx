@@ -46,6 +46,7 @@ const Chip = forwardRef<HTMLDivElement, ChipProps>(
     )
   }
 )
+
 Chip.displayName = 'Chip'
 
 export default Chip

@@ -53,6 +53,7 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(
     )
   }
 )
+
 Badge.displayName = 'Badge'
 
 export default Badge

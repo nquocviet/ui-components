@@ -101,6 +101,7 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
     )
   }
 )
+
 Checkbox.displayName = 'Checkbox'
 
 export default Checkbox
