@@ -87,7 +87,7 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
                       rateHalf <= rating
                         ? color
                           ? color
-                          : 'rgb(var(--warning-400))'
+                          : 'rgb(var(--yellow-400))'
                         : 'rgb(var(--gray-400))',
                   }}
                   onClick={() => onChangeRating(rateHalf)}
@@ -111,7 +111,7 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
                     rateFull <= rating
                       ? color
                         ? color
-                        : 'rgb(var(--warning-400))'
+                        : 'rgb(var(--yellow-400))'
                       : 'rgb(var(--gray-400))',
                 }}
                 onClick={() => onChangeRating(rateFull)}

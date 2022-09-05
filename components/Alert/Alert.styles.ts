@@ -10,20 +10,20 @@ export const styles = {
       outlined: 'bg-gray-25 border-gray-300 text-gray-600',
     },
     info: {
-      contained: 'bg-info-600 border-info-600 text-white',
-      outlined: 'bg-info-25 border-info-300 text-info-600',
+      contained: 'bg-blue-600 border-blue-600 text-white',
+      outlined: 'bg-blue-25 border-blue-300 text-blue-600',
     },
     error: {
-      contained: 'bg-error-600 border-error-600 text-white',
-      outlined: 'bg-error-25 border-error-300 text-error-600',
+      contained: 'bg-red-600 border-red-600 text-white',
+      outlined: 'bg-red-25 border-red-300 text-red-600',
     },
     warning: {
-      contained: 'bg-warning-500 border-warning-500 text-white',
-      outlined: 'bg-warning-25 border-warning-300 text-warning-600',
+      contained: 'bg-yellow-500 border-yellow-500 text-white',
+      outlined: 'bg-yellow-25 border-yellow-300 text-yellow-600',
     },
     success: {
-      contained: 'bg-success-600 border-success-600 text-white',
-      outlined: 'bg-success-25 border-success-300 text-success-600',
+      contained: 'bg-green-600 border-green-600 text-white',
+      outlined: 'bg-green-25 border-green-300 text-green-600',
     },
   },
   placements: {

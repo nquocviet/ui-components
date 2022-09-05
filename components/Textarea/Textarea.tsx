@@ -66,7 +66,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             className='mb-1.5 text-gray-700'
           >
             {label}
-            {required && <span className='text-error-500 ml-0.5'>*</span>}
+            {required && <span className='text-red-500 ml-0.5'>*</span>}
           </Typography>
         )}
         <div className={allClassNames}>
@@ -96,7 +96,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           </Typography>
         )}
         {error && (
-          <Typography fontSize='text-sm' className='mt-1.5 text-error-600'>
+          <Typography fontSize='text-sm' className='mt-1.5 text-red-600'>
             {error}
           </Typography>
         )}

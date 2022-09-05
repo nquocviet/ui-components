@@ -10,20 +10,20 @@ export const styles = {
       dot: 'bg-gray-700',
     },
     info: {
-      standard: 'bg-info-50 text-info-700',
-      dot: 'bg-info-700',
+      standard: 'bg-blue-50 text-blue-700',
+      dot: 'bg-blue-700',
     },
     error: {
-      standard: 'bg-error-50 text-error-700',
-      dot: 'bg-error-700',
+      standard: 'bg-red-50 text-red-700',
+      dot: 'bg-red-700',
     },
     warning: {
-      standard: 'bg-warning-50 text-warning-700',
-      dot: 'bg-warning-600',
+      standard: 'bg-yellow-50 text-yellow-700',
+      dot: 'bg-yellow-600',
     },
     success: {
-      standard: 'bg-success-50 text-success-700',
-      dot: 'bg-success-600',
+      standard: 'bg-green-50 text-green-700',
+      dot: 'bg-green-600',
     },
   },
   placements: {

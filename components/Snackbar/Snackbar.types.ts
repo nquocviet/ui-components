@@ -10,7 +10,7 @@ export type SnackbarProps = {
   open?: boolean
   autoHideDuration?: number
   placement?: SnackbarPlacements
-  zIndex?: number | null
+  zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
   onClose?: () => void
   onUndo?: () => void

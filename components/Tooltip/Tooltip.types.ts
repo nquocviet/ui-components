@@ -25,6 +25,6 @@ export type TooltipProps = {
   placement?: TooltipPlacements
   maxWidth?: number
   mouseEnterDelay?: number
-  zIndex?: number | null
+  zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
 } & React.HTMLAttributes<HTMLDivElement>

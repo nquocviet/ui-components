@@ -3,10 +3,10 @@ export const styles = {
   colors: {
     primary: 'text-primary-600 bg-primary-100 border-primary-50',
     gray: 'text-gray-600 bg-gray-100 border-gray-50',
-    info: 'text-info-600 bg-info-100 border-info-50',
-    error: 'text-error-600 bg-error-100 border-error-50',
-    warning: 'text-warning-600 bg-warning-100 border-warning-50',
-    success: 'text-success-600 bg-success-100 border-success-50',
+    info: 'text-blue-600 bg-blue-100 border-blue-50',
+    error: 'text-red-600 bg-red-100 border-red-50',
+    warning: 'text-yellow-600 bg-yellow-100 border-yellow-50',
+    success: 'text-green-600 bg-green-100 border-green-50',
   },
   sizes: {
     sm: 'border-4',
