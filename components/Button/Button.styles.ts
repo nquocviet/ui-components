@@ -27,51 +27,51 @@ export const styles = {
     },
     info: {
       contained:
-        'bg-info-700 text-white border-info-700 ring-info-100 enabled:hover:bg-info-800 enabled:hover:border-info-800 disabled:bg-info-200 disabled:border-info-200',
+        'bg-blue-700 text-white border-blue-700 ring-blue-100 enabled:hover:bg-blue-800 enabled:hover:border-blue-800 disabled:bg-blue-200 disabled:border-blue-200',
       gradient:
-        'enabled:bg-gradient-to-r from-info-700 via-info-500 to-info-700 bg-[length:200%_auto] text-white border-transparent ring-info-100 enabled:hover:bg-[right_100%] disabled:bg-info-200 disabled:border-info-200',
+        'enabled:bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 bg-[length:200%_auto] text-white border-transparent ring-blue-100 enabled:hover:bg-[right_100%] disabled:bg-blue-200 disabled:border-blue-200',
       light:
-        'bg-info-25 text-info-500 border-info-25 ring-info-100 enabled:hover:bg-info-50 enabled:hover:border-info-50 disabled:bg-info-25 disabled:border-info-25 disabled:text-info-300',
+        'bg-blue-25 text-blue-500 border-blue-25 ring-blue-100 enabled:hover:bg-blue-50 enabled:hover:border-blue-50 disabled:bg-blue-25 disabled:border-blue-25 disabled:text-blue-300',
       outlined:
-        'bg-white text-info-600 border-info-500 ring-info-100 enabled:hover:bg-info-50 disabled:border-info-200 disabled:text-info-300',
-      text: 'text-info-600 border-transparent ring-info-100 enabled:hover:border-info-50 enabled:hover:bg-info-50 disabled:text-gray-300',
-      link: 'text-info-600 border-transparent enabled:hover:underline disabled:text-gray-300',
+        'bg-white text-blue-600 border-blue-500 ring-blue-100 enabled:hover:bg-blue-50 disabled:border-blue-200 disabled:text-blue-300',
+      text: 'text-blue-600 border-transparent ring-blue-100 enabled:hover:border-blue-50 enabled:hover:bg-blue-50 disabled:text-gray-300',
+      link: 'text-blue-600 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     error: {
       contained:
-        'bg-error-600 text-white border-error-600 ring-error-100 enabled:hover:bg-error-700 enabled:hover:border-error-700 disabled:bg-error-200 disabled:border-error-200',
+        'bg-red-600 text-white border-red-600 ring-red-100 enabled:hover:bg-red-700 enabled:hover:border-red-700 disabled:bg-red-200 disabled:border-red-200',
       gradient:
-        'enabled:bg-gradient-to-r from-error-600 via-error-500 to-error-600 bg-[length:200%_auto] text-white border-transparent ring-error-100 enabled:hover:bg-[right_100%] disabled:bg-error-200 disabled:border-error-200',
+        'enabled:bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-[length:200%_auto] text-white border-transparent ring-red-100 enabled:hover:bg-[right_100%] disabled:bg-red-200 disabled:border-red-200',
       light:
-        'bg-error-25 text-error-700 border-error-25 ring-error-100 enabled:hover:bg-error-50 enabled:hover:border-error-50 disabled:bg-error-25 disabled:border-error-25 disabled:text-error-300',
+        'bg-red-25 text-red-700 border-red-25 ring-red-100 enabled:hover:bg-red-50 enabled:hover:border-red-50 disabled:bg-red-25 disabled:border-red-25 disabled:text-red-300',
       outlined:
-        'bg-white text-error-700 border-error-500 ring-error-100 enabled:hover:bg-error-50 disabled:border-error-200 disabled:text-error-300',
-      text: 'text-error-700 border-transparent ring-error-100 enabled:hover:border-error-50 enabled:hover:bg-error-50 disabled:text-gray-300',
-      link: 'text-error-700 border-transparent enabled:hover:underline disabled:text-gray-300',
+        'bg-white text-red-700 border-red-500 ring-red-100 enabled:hover:bg-red-50 disabled:border-red-200 disabled:text-red-300',
+      text: 'text-red-700 border-transparent ring-red-100 enabled:hover:border-red-50 enabled:hover:bg-red-50 disabled:text-gray-300',
+      link: 'text-red-700 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     warning: {
       contained:
-        'bg-warning-500 text-white border-warning-500 ring-warning-100 enabled:hover:bg-warning-600 enabled:hover:border-warning-600 disabled:bg-warning-200 disabled:border-warning-200',
+        'bg-yellow-500 text-white border-yellow-500 ring-yellow-100 enabled:hover:bg-yellow-600 enabled:hover:border-yellow-600 disabled:bg-yellow-200 disabled:border-yellow-200',
       gradient:
-        'enabled:bg-gradient-to-r from-warning-500 via-warning-400 to-warning-500 bg-[length:200%_auto] text-white border-transparent ring-warning-100 enabled:hover:bg-[right_100%] disabled:bg-warning-200 disabled:border-warning-200',
+        'enabled:bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 bg-[length:200%_auto] text-white border-transparent ring-yellow-100 enabled:hover:bg-[right_100%] disabled:bg-yellow-200 disabled:border-yellow-200',
       light:
-        'bg-warning-25 text-warning-600 border-warning-25 ring-warning-100 enabled:hover:bg-warning-50 enabled:hover:border-warning-50 disabled:bg-warning-25 disabled:border-warning-25 disabled:text-warning-200',
+        'bg-yellow-25 text-yellow-600 border-yellow-25 ring-yellow-100 enabled:hover:bg-yellow-50 enabled:hover:border-yellow-50 disabled:bg-yellow-25 disabled:border-yellow-25 disabled:text-yellow-200',
       outlined:
-        'bg-white text-warning-600 border-warning-400 ring-warning-100 enabled:hover:bg-warning-50 disabled:border-warning-100 disabled:text-warning-200',
-      text: 'text-warning-600 border-transparent ring-warning-100 enabled:hover:border-warning-50 enabled:hover:bg-warning-50 disabled:text-gray-300',
-      link: 'text-warning-600 border-transparent enabled:hover:underline disabled:text-gray-300',
+        'bg-white text-yellow-600 border-yellow-400 ring-yellow-100 enabled:hover:bg-yellow-50 disabled:border-yellow-100 disabled:text-yellow-200',
+      text: 'text-yellow-600 border-transparent ring-yellow-100 enabled:hover:border-yellow-50 enabled:hover:bg-yellow-50 disabled:text-gray-300',
+      link: 'text-yellow-600 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
     success: {
       contained:
-        'bg-success-600 text-white border-success-600 ring-success-100 enabled:hover:bg-success-700 enabled:hover:border-success-700 disabled:bg-success-200 disabled:border-success-200',
+        'bg-green-600 text-white border-green-600 ring-green-100 enabled:hover:bg-green-700 enabled:hover:border-green-700 disabled:bg-green-200 disabled:border-green-200',
       gradient:
-        'enabled:bg-gradient-to-r from-success-600 via-success-500 to-success-600 bg-[length:200%_auto] text-white border-transparent ring-success-100 enabled:hover:bg-[right_100%] disabled:bg-success-200 disabled:border-success-200',
+        'enabled:bg-gradient-to-r from-green-600 via-green-500 to-green-600 bg-[length:200%_auto] text-white border-transparent ring-green-100 enabled:hover:bg-[right_100%] disabled:bg-green-200 disabled:border-green-200',
       light:
-        'bg-success-25 text-success-600 border-success-25 ring-success-100 enabled:hover:bg-success-50 enabled:hover:border-success-50 disabled:bg-success-25 disabled:border-success-25 disabled:text-success-300',
+        'bg-green-25 text-green-600 border-green-25 ring-green-100 enabled:hover:bg-green-50 enabled:hover:border-green-50 disabled:bg-green-25 disabled:border-green-25 disabled:text-green-300',
       outlined:
-        'bg-white text-success-600 border-success-500 ring-success-100 enabled:hover:bg-success-50 disabled:border-success-200 disabled:text-success-300',
-      text: 'text-success-600 border-transparent ring-success-100 enabled:hover:border-success-50 enabled:hover:bg-success-50 disabled:text-gray-300',
-      link: 'text-success-600 border-transparent enabled:hover:underline disabled:text-gray-300',
+        'bg-white text-green-600 border-green-500 ring-green-100 enabled:hover:bg-green-50 disabled:border-green-200 disabled:text-green-300',
+      text: 'text-green-600 border-transparent ring-green-100 enabled:hover:border-green-50 enabled:hover:bg-green-50 disabled:text-gray-300',
+      link: 'text-green-600 border-transparent enabled:hover:underline disabled:text-gray-300',
     },
   },
   fontSizes: {

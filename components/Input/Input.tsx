@@ -47,7 +47,7 @@ const Input = forwardRef<HTMLLabelElement, InputProps>(
             className='mb-1.5 font-medium text-gray-700'
           >
             {label}
-            {required && <span className='text-error-500 ml-0.5'>*</span>}
+            {required && <span className='text-red-500 ml-0.5'>*</span>}
           </Typography>
         )}
         <div className={allClassNames}>
@@ -102,7 +102,7 @@ const Input = forwardRef<HTMLLabelElement, InputProps>(
           </Typography>
         )}
         {error && (
-          <Typography fontSize='text-sm' className='mt-1.5 text-error-600'>
+          <Typography fontSize='text-sm' className='mt-1.5 text-red-600'>
             {error}
           </Typography>
         )}

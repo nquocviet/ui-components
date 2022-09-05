@@ -68,10 +68,10 @@ const Template: ComponentStory<typeof AvatarGroup> = (args) => (
   <AvatarGroup spacing='lg' {...args}>
     <Avatar className='bg-primary-50 text-primary-700'>E</Avatar>
     <Avatar className='bg-gray-50 text-gray-700'>X</Avatar>
-    <Avatar className='bg-warning-50 text-warning-700'>A</Avatar>
-    <Avatar className='bg-info-50 text-info-700'>M</Avatar>
-    <Avatar className='bg-success-50 text-success-700'>P</Avatar>
-    <Avatar className='bg-error-50 text-error-700'>L</Avatar>
+    <Avatar className='bg-yellow-50 text-yellow-700'>A</Avatar>
+    <Avatar className='bg-blue-50 text-blue-700'>M</Avatar>
+    <Avatar className='bg-green-50 text-green-700'>P</Avatar>
+    <Avatar className='bg-red-50 text-red-700'>L</Avatar>
     <Avatar className='bg-slate-50 text-slate-700'>E</Avatar>
   </AvatarGroup>
 )

@@ -11,7 +11,7 @@ export type RatingProps = {
   disabled?: boolean
   readOnly?: boolean
   max?: number
-  color?: string
+  color?: React.CSSProperties['color']
   className?: string
   icon?: ReactNode
   emptyIcon?: ReactNode

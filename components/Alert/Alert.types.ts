@@ -28,7 +28,7 @@ export type AlertProps = {
   floating?: boolean
   autoHideDuration?: number
   placement?: AlertPlacements
-  zIndex?: number | null
+  zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
   onClose?: () => void
 } & React.HTMLAttributes<HTMLDivElement>
