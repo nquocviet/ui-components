@@ -21,4 +21,5 @@ export type PaperProps = {
   rounded?: PaperRounded
   padding?: PaperPaddings
   hasBorder?: boolean
+  className?: string
 } & React.HTMLAttributes<HTMLDivElement>

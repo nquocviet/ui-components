@@ -10,9 +10,11 @@ const Overlay = forwardRef<HTMLDivElement, OverlayProps>(
       children,
       rounded = 'none',
       color,
-      opacity = 0.5,
+      opacity,
+      blur,
       zIndex = null,
       className,
+      style,
       ...rest
     },
     ref
@@ -22,14 +24,14 @@ const Overlay = forwardRef<HTMLDivElement, OverlayProps>(
       styles.rounded[rounded],
       !zIndex && 'z-popover'
     )
-
-    return (
+    const overlay = (
       <Box
         className={allClassNames}
         style={{
-          opacity,
+          opacity: opacity || 0.5,
           backgroundColor: color ? color : 'rgb(var(--black))',
           ...(zIndex && { zIndex }),
+          ...style,
         }}
         ref={ref}
         {...rest}
@@ -37,6 +39,22 @@ const Overlay = forwardRef<HTMLDivElement, OverlayProps>(
         {children}
       </Box>
     )
+
+    if (blur) {
+      return (
+        <Box
+          className={clsx('absolute inset-0', !zIndex && 'z-popover')}
+          style={{
+            backdropFilter: `blur(${blur})`,
+            ...(zIndex && { zIndex }),
+          }}
+        >
+          {overlay}
+        </Box>
+      )
+    }
+
+    return overlay
   }
 )
 

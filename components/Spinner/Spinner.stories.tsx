@@ -50,13 +50,6 @@ export default {
 
 const Template: ComponentStory<typeof Spinner> = (args) => <Spinner {...args} />
 
-export const Circular = Template.bind({})
-Circular.args = {
-  type: 'circular',
-  className: '',
-  size: 'md',
-}
-
 export const Dash = Template.bind({})
 Dash.args = {
   type: 'dash',

@@ -19,6 +19,7 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(
       xs,
       children,
       className,
+      style,
       ...rest
     },
     ref
@@ -44,6 +45,7 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(
           ...(isRow && {
             ['--grid-spacing' as any]: `${spacing / 2}px`,
           }),
+          ...style,
         }}
         ref={ref}
         {...rest}

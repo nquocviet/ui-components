@@ -1,4 +1,4 @@
-export type SpinnerTypes = 'circular' | 'dash' | 'dots'
+export type SpinnerTypes = 'dash' | 'dots'
 
 export type SpinnerSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 

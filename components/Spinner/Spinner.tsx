@@ -5,39 +5,26 @@ import { styles } from './Spinner.styles'
 import { SpinnerProps } from './Spinner.types'
 
 const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
-  ({ type = 'circular', size = 'md', className, ...rest }, ref) => {
+  ({ type = 'dash', size = 'md', className, style, ...rest }, ref) => {
     const [box, line, space] = styles.sizes[size]
-    const isAbsolute = (className as string).includes('absolute')
+    const isAbsolute = className?.includes('absolute')
 
-    if (type === 'circular' || type === 'dash') {
+    if (type === 'dash') {
       return (
         <div
-          className={clsx(
-            type === 'circular' && 'rounded-full outline outline-gray-200',
-            !isAbsolute && 'relative',
-            className
-          )}
+          className={clsx(!isAbsolute && 'relative', className)}
           style={{
-            ...(type === 'circular' && {
-              outlineWidth: `${line}px`,
-              outlineOffset: `-${line}px`,
-              width: `${box}px`,
-              height: `${box}px`,
-            }),
-
             ['--dash-array-1' as any]: box * 4 - line * 2,
             ['--dash-array-2' as any]: box * 6,
             ['--dash-offset-1' as any]: -box - line * 4,
             ['--dash-offset-2' as any]: -box * 5 - line * 2 - space,
+            ...style,
           }}
           ref={ref}
           {...rest}
         >
           <svg
-            className={clsx(
-              'text-primary-600 animate-rotate-loading',
-              type === 'circular' && 'absolute inset-0'
-            )}
+            className={clsx('text-primary-600 animate-rotate-loading')}
             style={{
               width: `${box}px`,
               height: `${box}px`,
@@ -65,6 +52,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
         style={{
           width: `${box}px`,
           height: `${box}px`,
+          ...style,
         }}
       >
         {[...Array(12)].map((_, index) => (

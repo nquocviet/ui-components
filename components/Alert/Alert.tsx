@@ -34,6 +34,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
       },
       zIndex = null,
       className,
+      style,
       onClose,
       ...rest
     },
@@ -72,6 +73,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
         style={{
           ...(width && { ['--alert-width' as any]: width }),
           ...(zIndex && { zIndex }),
+          ...style,
         }}
         ref={ref}
         {...rest}
