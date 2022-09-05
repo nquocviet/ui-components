@@ -17,6 +17,7 @@ const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
       },
       zIndex = null,
       className,
+      style,
       onClose,
       onUndo,
       ...rest
@@ -50,6 +51,7 @@ const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
         className={allClassNames}
         style={{
           ...(zIndex && { zIndex }),
+          ...style,
         }}
         ref={ref}
         {...rest}

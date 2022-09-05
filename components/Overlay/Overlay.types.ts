@@ -7,6 +7,7 @@ export type OverlayProps = {
   rounded?: OverlayRounded
   color?: React.CSSProperties['backgroundColor']
   opacity?: React.CSSProperties['opacity']
+  blur?: React.CSSProperties['backdropFilter']
   zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
 } & React.HTMLAttributes<HTMLDivElement>

@@ -11,6 +11,7 @@ const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
       height,
       animation = true,
       className,
+      style,
       ...rest
     },
     ref
@@ -29,6 +30,7 @@ const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
         style={{
           ...(width && { width }),
           ...(height && { height }),
+          ...style,
         }}
         {...rest}
       />

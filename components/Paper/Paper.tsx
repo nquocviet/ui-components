@@ -11,6 +11,7 @@ const Paper = forwardRef<HTMLDivElement, PaperProps>(
       rounded = 'md',
       padding = 'md',
       hasBorder,
+      className,
       ...rest
     },
     ref
@@ -19,7 +20,8 @@ const Paper = forwardRef<HTMLDivElement, PaperProps>(
       styles.shadows[shadow],
       styles.rounded[rounded],
       styles.paddings[padding],
-      hasBorder && styles.border
+      hasBorder && styles.border,
+      className
     )
 
     return (

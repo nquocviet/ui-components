@@ -1,5 +1,5 @@
 export const styles = {
-  border: 'border border-gray-200',
+  border: 'border border-gray-200 overflow-hidden',
   shadows: {
     xs: 'shadow-xs',
     sm: 'shadow-sm',

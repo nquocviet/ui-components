@@ -15,6 +15,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
       spacing = 16,
       children,
       className,
+      style,
       ...rest
     },
     ref
@@ -56,6 +57,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
           ...(typeof spacing === 'number'
             ? { ['--stack-spacing' as any]: `${spacing}px` }
             : defineSpacingVariables()),
+          ...style,
         }}
         ref={ref}
         {...rest}

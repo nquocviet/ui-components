@@ -43,6 +43,13 @@ export default {
       },
       control: { type: 'number' },
     },
+    blur: {
+      description: 'Set backdrop filter to component.',
+      table: {
+        type: { summary: 'number' },
+      },
+      control: { type: 'number' },
+    },
     zIndex: {
       description: 'Config z-index of component.',
       table: {
@@ -63,7 +70,7 @@ export default {
     docs: {
       description: {
         component:
-          'The Paper component renders white background with shadow, border-radius and padding.',
+          'Overlays given element with div element with any color and opacity.',
       },
     },
   },
