@@ -17,6 +17,8 @@ export type StackJustify =
   | 'space-around'
   | 'space-evenly'
 
+export type StackWrap = 'wrap' | 'nowrap' | 'wrap-reverse'
+
 export type StackSpacing = {
   xs?: number
   sm?: number
@@ -25,11 +27,13 @@ export type StackSpacing = {
   xl?: number
 }
 
-export type StackProps = {
+export type StackProps = React.HTMLAttributes<HTMLDivElement> & {
   direction?: StackDirection
   align?: StackAlignment
   justify?: StackJustify
+  wrap?: StackWrap
   spacing?: number | StackSpacing
-  children: ReactNode[]
+  fluid?: boolean
+  children: ReactNode | ReactNode[]
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

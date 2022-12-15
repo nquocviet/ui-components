@@ -1,5 +1,5 @@
 export const styles = {
-  border: 'border border-gray-200 overflow-hidden',
+  border: 'border border-gray-200',
   shadows: {
     xs: 'shadow-xs',
     sm: 'shadow-sm',
@@ -19,6 +19,7 @@ export const styles = {
     full: 'rounded-full',
   },
   paddings: {
+    none: '',
     xs: 'p-2',
     sm: 'p-3',
     md: 'p-4',

@@ -1,25 +1,16 @@
 import { ReactNode } from 'react'
 
-export type TooltipPlacements =
-  | 'top'
-  | 'top-left'
-  | 'top-right'
-  | 'right'
-  | 'right-top'
-  | 'right-bottom'
-  | 'bottom'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'left'
-  | 'left-top'
-  | 'left-bottom'
+export type TooltipPlacements = {
+  horizontal: 'center' | 'left' | 'right'
+  vertical: 'bottom' | 'top'
+}
 
 export type TooltipThemes = 'light' | 'dark'
 
-export type TooltipProps = {
+export type TooltipProps = React.HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
   theme?: TooltipThemes
-  title: ReactNode
+  content: ReactNode
   description?: ReactNode
   autoAdjustOverflow?: boolean
   placement?: TooltipPlacements
@@ -27,4 +18,5 @@ export type TooltipProps = {
   mouseEnterDelay?: number
   zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+  containerClassName?: string
+}

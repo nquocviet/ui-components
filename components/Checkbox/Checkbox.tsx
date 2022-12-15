@@ -16,8 +16,11 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
       description,
       className,
       rounded = false,
+      nowrap = false,
+      checked,
       defaultChecked = false,
       disabled = false,
+      style,
       onChange,
       ...rest
     },
@@ -35,9 +38,10 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
       <div
         className={clsx('inline-flex items-start gap-2', className)}
         ref={ref}
+        style={{ ...style }}
       >
         <label
-          className='inline-flex justify-center items-center w-checkbox h-checkbox cursor-pointer overflow-hidden relative'
+          className='relative inline-flex h-checkbox w-checkbox cursor-pointer items-center justify-center overflow-hidden'
           style={{
             ['--checkbox-size' as any]: `${
               styles.containerSizes[size] || size
@@ -55,13 +59,13 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
                 onChange && onChange(event)
               }
             }}
-            checked={toggle}
+            checked={typeof checked === 'boolean' ? checked : toggle}
             disabled={disabled}
             {...rest}
           />
           <div
             className={clsx(
-              'absolute border top-0 left-0 w-full h-full transition-colors peer-disabled:cursor-not-allowed',
+              'absolute top-0 left-0 h-full w-full border transition-colors peer-disabled:cursor-not-allowed',
               styles.containerThemes[theme],
               rounded ? 'rounded-full' : 'rounded'
             )}
@@ -86,8 +90,9 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
             {label && (
               <label
                 className={clsx(
-                  'text-gray-700 font-medium cursor-pointer',
-                  disabled && 'cursor-not-allowed'
+                  'text-gray-800',
+                  nowrap && 'whitespace-nowrap',
+                  disabled ? 'cursor-not-allowed' : 'cursor-pointer'
                 )}
                 htmlFor={id}
               >

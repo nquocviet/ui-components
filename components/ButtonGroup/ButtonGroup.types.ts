@@ -12,7 +12,7 @@ export type ButtonGroupColors =
 
 export type ButtonGroupVariants = 'contained' | 'light' | 'outlined' | 'text'
 
-export type ButtonGroupProps = {
+export type ButtonGroupProps = React.HTMLAttributes<HTMLDivElement> & {
   size?: ButtonGroupSizes
   color?: ButtonGroupColors
   variant?: ButtonGroupVariants
@@ -20,4 +20,4 @@ export type ButtonGroupProps = {
   fluid?: boolean
   disabled?: boolean
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

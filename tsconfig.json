@@ -2,10 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
+      "@/components": ["components/index.ts"],
       "@/context/*": ["context/*"],
       "@/hooks": ["hooks"],
-      "@/page-components/*": ["page-components/*"],
       "@/pages/*": ["pages/*"],
       "@/public/*": ["public/*"],
       "@/styles/*": ["styles/*"],

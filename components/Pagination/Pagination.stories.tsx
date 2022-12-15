@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Pagination from '@/components/Pagination'
+import Pagination from './Pagination'
 
 export default {
   title: 'Design System/Components/Pagination',
@@ -120,7 +120,7 @@ Page.args = {
   currentPage: 1,
   totalPages: 10,
   offset: 2,
-  border: true,
+  withBorder: true,
   disabled: false,
   responsive: true,
   hideNextButton: false,
@@ -136,7 +136,7 @@ Card.args = {
   currentPage: 1,
   totalPages: 10,
   offset: 2,
-  border: true,
+  withBorder: true,
   disabled: false,
   responsive: true,
   hideNextButton: false,
@@ -152,7 +152,7 @@ Group.args = {
   currentPage: 1,
   totalPages: 10,
   offset: 2,
-  border: true,
+  withBorder: true,
   disabled: false,
   responsive: true,
   hideNextButton: false,
@@ -168,7 +168,7 @@ GroupLeft.args = {
   currentPage: 1,
   totalPages: 10,
   offset: 2,
-  border: true,
+  withBorder: true,
   disabled: false,
   responsive: true,
   hideNextButton: false,
@@ -184,7 +184,7 @@ GroupRight.args = {
   currentPage: 1,
   totalPages: 10,
   offset: 2,
-  border: true,
+  withBorder: true,
   disabled: false,
   responsive: true,
   hideNextButton: false,

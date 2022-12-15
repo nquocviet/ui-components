@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Progress from '@/components/Progress'
+import Progress from './Progress'
 
 export default {
   title: 'Design System/Components/Progress',

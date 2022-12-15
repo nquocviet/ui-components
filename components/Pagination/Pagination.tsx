@@ -49,12 +49,13 @@ const getRange = (
 const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
   (
     {
-      variant = 'page',
+      variant = 'card',
       shape = 'circular',
+      padding = 'md',
       currentPage,
       totalPages,
       offset = 2,
-      border = true,
+      withBorder = true,
       disabled,
       responsive = true,
       hideNextButton,
@@ -72,7 +73,8 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
       <div
         className={clsx(
           styles.base,
-          border && 'border-t border-gray-200',
+          styles.padding[padding],
+          withBorder && 'border-t border-gray-200',
           className
         )}
         ref={ref}
@@ -172,7 +174,7 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
                   <Button
                     key={page}
                     className={clsx(
-                      currentPage === page && '!bg-gray-100 !hover:bg-gray-200'
+                      currentPage === page && '!hover:bg-gray-200 !bg-gray-100'
                     )}
                     disabled={disabled}
                     onlyIcon

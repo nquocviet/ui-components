@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
-export type BoxProps = {
+export type BoxProps = React.HTMLAttributes<HTMLElement> & {
   children: ReactNode
   component?: string
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

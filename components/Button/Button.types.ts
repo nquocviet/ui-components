@@ -21,7 +21,7 @@ export type ButtonVariants =
   | 'text'
   | 'link'
 
-type TBaseProps = {
+export type ButtonBaseProps = {
   children: ReactNode | ReactNode[]
   type?: ButtonTypes
   size?: ButtonSizes
@@ -36,28 +36,22 @@ type TBaseProps = {
   fluid?: boolean
   rounded?: boolean
   disabled?: boolean
-  onClick?:
-    | (() => void)
-    | ((
-        event: React.MouseEvent<
-          HTMLButtonElement | HTMLAnchorElement | HTMLLabelElement,
-          MouseEvent
-        >
-      ) => void)
+  nowrap?: boolean
+  onClick?: () => void
 }
 
-export type ButtonAsButton = TBaseProps &
-  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof TBaseProps> & {
+export type ButtonAsButton = ButtonBaseProps &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonBaseProps> & {
     as?: 'button'
   }
 
-export type ButtonAsLink = TBaseProps &
-  Omit<LinkProps, keyof TBaseProps> & {
+export type ButtonAsLink = ButtonBaseProps &
+  Omit<LinkProps, keyof ButtonBaseProps> & {
     as: 'a'
   }
 
-export type ButtonAsLabel = TBaseProps &
-  Omit<React.LabelHTMLAttributes<HTMLLabelElement>, keyof TBaseProps> & {
+export type ButtonAsLabel = ButtonBaseProps &
+  Omit<React.LabelHTMLAttributes<HTMLLabelElement>, keyof ButtonBaseProps> & {
     as: 'label'
   }
 

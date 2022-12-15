@@ -3,7 +3,7 @@ import { SpinnerSizes } from '../Spinner/Spinner.types'
 
 export type LoadingOverlayTypes = 'dash' | 'dots'
 
-export type LoadingOverlayProps = {
+export type LoadingOverlayProps = React.HTMLAttributes<HTMLDivElement> & {
   type?: LoadingOverlayTypes
   visible?: boolean
   loader?: ReactNode
@@ -15,4 +15,4 @@ export type LoadingOverlayProps = {
   overlayZIndex?: React.CSSProperties['zIndex'] | null
   zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

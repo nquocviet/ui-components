@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { LoadingOverlayProps } from './LoadingOverlay.types'
-import { Box, Overlay, Spinner } from '..'
+import { Box, Overlay, Spinner } from '@/components'
 import { styles } from './LoadingOverlay.styles'
 
 const LoadingOverlay = forwardRef<HTMLDivElement, LoadingOverlayProps>(

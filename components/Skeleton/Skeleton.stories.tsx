@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Skeleton from '@/components/Skeleton'
+import Skeleton from './Skeleton'
 
 export default {
   title: 'Design System/Components/Skeleton',

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Container from '@/components/Container'
+import Container from './Container'
 
 export default {
   title: 'Design System/Components/Container',

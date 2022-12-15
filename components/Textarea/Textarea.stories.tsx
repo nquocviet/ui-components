@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Textarea from '@/components/Textarea'
+import Textarea from './Textarea'
 
 export default {
   title: 'Design System/Components/Textarea',

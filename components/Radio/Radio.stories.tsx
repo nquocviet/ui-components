@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Radio from '@/components/Radio'
+import Radio from './Radio'
 
 export default {
   title: 'Design System/Components/Radio',

@@ -10,17 +10,18 @@ const Paper = forwardRef<HTMLDivElement, PaperProps>(
       shadow = 'md',
       rounded = 'md',
       padding = 'md',
-      hasBorder,
+      withBorder,
+      borderOnly,
       className,
       ...rest
     },
     ref
   ) => {
     const allClassNames = clsx(
-      styles.shadows[shadow],
+      !borderOnly && styles.shadows[shadow],
       styles.rounded[rounded],
       styles.paddings[padding],
-      hasBorder && styles.border,
+      (withBorder || borderOnly) && styles.border,
       className
     )
 

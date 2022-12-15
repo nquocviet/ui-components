@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Stack from '@/components/Stack'
-import Box from '@/components/Box'
+import Stack from './Stack'
+import Box from '../Box'
 
 export default {
   title: 'Design System/Components/Stack',

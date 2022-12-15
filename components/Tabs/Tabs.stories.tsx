@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Tabs from '@/components/Tabs'
+import Tabs from './Tabs'
 import { action } from '@storybook/addon-actions'
 
 const { TabPanel } = Tabs

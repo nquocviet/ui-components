@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { PropsSpread } from '@/utils'
 
 export type OptionType = {
   label: string
@@ -7,22 +8,25 @@ export type OptionType = {
 
 export type SelectSizes = 'sm' | 'md'
 
-export type SelectProps = {
-  options: OptionType[]
-  size?: SelectSizes
-  defaultOption?: OptionType | OptionType[] | {}
-  label?: string
-  name: string
-  placeholder?: string
-  maxHeight?: number
-  maxItems?: number
-  disabled?: boolean
-  multiple?: boolean
-  required?: boolean
-  error?: string
-  leading?: ReactNode
-  trailing?: ReactNode
-  className?: string
-  onChange: ((value: any) => void) | ((values: any[]) => void)
-  onRemove?: () => void
-} & React.HTMLAttributes<HTMLInputElement>
+export type SelectProps = PropsSpread<
+  React.HTMLAttributes<HTMLInputElement>,
+  {
+    options: OptionType[]
+    size?: SelectSizes
+    defaultValue?: string | string[]
+    label?: string
+    name: string
+    placeholder?: string
+    maxHeight?: number
+    maxItems?: number
+    disabled?: boolean
+    multiple?: boolean
+    required?: boolean
+    error?: string
+    leading?: ReactNode
+    trailing?: ReactNode
+    className?: string
+    onChange: (value: string | string[]) => void
+    onRemove?: () => void
+  }
+>

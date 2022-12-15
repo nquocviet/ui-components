@@ -22,15 +22,15 @@ const Overlay = forwardRef<HTMLDivElement, OverlayProps>(
     const allClassNames = clsx(
       styles.base,
       styles.rounded[rounded],
-      !zIndex && 'z-popover'
+      !zIndex !== null && 'z-popover'
     )
     const overlay = (
       <Box
         className={allClassNames}
         style={{
-          opacity: opacity || 0.5,
+          opacity: opacity || 0.4,
           backgroundColor: color ? color : 'rgb(var(--black))',
-          ...(zIndex && { zIndex }),
+          ...(zIndex !== null && { zIndex }),
           ...style,
         }}
         ref={ref}
@@ -43,10 +43,10 @@ const Overlay = forwardRef<HTMLDivElement, OverlayProps>(
     if (blur) {
       return (
         <Box
-          className={clsx('absolute inset-0', !zIndex && 'z-popover')}
+          className={clsx('absolute inset-0', !zIndex !== null && 'z-popover')}
           style={{
             backdropFilter: `blur(${blur})`,
-            ...(zIndex && { zIndex }),
+            ...(zIndex !== null && { zIndex }),
           }}
         >
           {overlay}

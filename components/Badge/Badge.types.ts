@@ -19,7 +19,7 @@ export type BadgeColors =
   | 'warning'
   | 'success'
 
-export type BadgeProps = {
+export type BadgeProps = React.HTMLAttributes<HTMLDivElement> & {
   variant?: BadgeVariants
   size?: BadgeSizes
   dotSize?: BadgeDotSizes
@@ -29,4 +29,4 @@ export type BadgeProps = {
   maxCount?: number
   placement?: BadgePlacements
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

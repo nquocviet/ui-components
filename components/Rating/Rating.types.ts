@@ -2,12 +2,13 @@ import { ReactNode } from 'react'
 
 export type RatingPrecisions = 'full' | 'half'
 
-export type RatingSizes = 'sm' | 'md' | 'lg'
+export type RatingSizes = 'sm' | 'md' | 'lg' | 'xl'
 
-export type RatingProps = {
+export type RatingProps = React.HTMLAttributes<HTMLDivElement> & {
   defaultValue?: number
   precision?: RatingPrecisions
   size?: RatingSizes
+  label?: string
   disabled?: boolean
   readOnly?: boolean
   max?: number
@@ -19,4 +20,4 @@ export type RatingProps = {
   trailing?: ReactNode
   onChange?: (rate: number) => void
   onHover?: (rate: number) => void
-} & React.HTMLAttributes<HTMLDivElement>
+}

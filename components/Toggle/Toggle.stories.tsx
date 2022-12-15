@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Toggle from '@/components/Toggle'
+import Toggle from './Toggle'
 
 export default {
   title: 'Design System/Components/Toggle',

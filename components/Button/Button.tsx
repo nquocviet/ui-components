@@ -5,7 +5,7 @@ import { styles } from './Button.styles'
 import { ButtonProps } from './Button.types'
 
 const Button = forwardRef<
-  HTMLButtonElement | HTMLAnchorElement | HTMLLabelElement,
+  HTMLButtonElement & HTMLAnchorElement & HTMLLabelElement,
   ButtonProps
 >(
   (
@@ -23,6 +23,7 @@ const Button = forwardRef<
       onlyIcon = false,
       fluid,
       rounded = false,
+      nowrap,
       onClick,
       ...rest
     },
@@ -36,6 +37,7 @@ const Button = forwardRef<
       variant !== 'link' &&
         (onlyIcon ? styles.iconSizes[size] : styles.sizes[size]),
       rounded && '!rounded-full',
+      nowrap && 'whitespace-nowrap',
       className
     )
 
@@ -45,7 +47,8 @@ const Button = forwardRef<
           <a
             className={allClassNames}
             target={target}
-            onClick={onClick}
+            onClick={() => onClick && onClick()}
+            ref={ref}
             {...rest}
           >
             {leading && leading}
@@ -61,7 +64,8 @@ const Button = forwardRef<
         <label
           role='button'
           className={allClassNames}
-          onClick={onClick}
+          onClick={() => onClick && onClick()}
+          ref={ref}
           {...rest}
         >
           {leading && leading}
@@ -72,7 +76,13 @@ const Button = forwardRef<
     }
 
     return (
-      <button className={allClassNames} type={type} onClick={onClick} {...rest}>
+      <button
+        className={allClassNames}
+        type={type}
+        onClick={() => onClick && onClick()}
+        ref={ref}
+        {...rest}
+      >
         {leading && leading}
         {children}
         {trailing && trailing}

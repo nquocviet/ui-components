@@ -15,7 +15,7 @@ export type AlertPlacements = {
   vertical: 'bottom' | 'top'
 }
 
-export type AlertProps = {
+export type AlertProps = React.HTMLAttributes<HTMLDivElement> & {
   color?: AlertColors
   variant?: AlertVariants
   icon?: JSX.Element | boolean
@@ -31,4 +31,4 @@ export type AlertProps = {
   zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
   onClose?: () => void
-} & React.HTMLAttributes<HTMLDivElement>
+}

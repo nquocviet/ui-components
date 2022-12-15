@@ -13,13 +13,14 @@ export type PaperRounded =
   | '3xl'
   | 'full'
 
-export type PaperPaddings = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+export type PaperPaddings = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
-export type PaperProps = {
+export type PaperProps = React.HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
   shadow?: PaperShadows
   rounded?: PaperRounded
   padding?: PaperPaddings
-  hasBorder?: boolean
+  withBorder?: boolean
+  borderOnly?: boolean
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

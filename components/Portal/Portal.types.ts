@@ -1,6 +1,7 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
-export type PortalProps = {
+export type PortalProps = React.HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
-  containerId: string
+  target?: HTMLElement | string
+  className?: string
 }

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Tooltip from '@/components/Tooltip'
+import Tooltip from './Tooltip'
 import Button from '../Button'
 import { Warning } from 'phosphor-react'
 
@@ -43,11 +43,11 @@ export default {
       table: {
         type: {
           summary:
-            'top | top-left | top-right | right | right-top | right-bottom | bottom | bottom-left | bottom-right | left | left-top | left-right',
+            "{ horizontal: 'center' | 'left' | 'right', vertical: 'bottom' | 'top' }",
         },
-        defaultValue: { summary: 'top' },
+        defaultValue: { summary: "{ horizontal: 'center', vertical: 'top' }" },
       },
-      control: { type: 'text' },
+      control: { type: 'object' },
     },
     mouseEnterDelay: {
       description:
@@ -66,7 +66,7 @@ export default {
         type: { summary: 'number | null' },
         defaultValue: { summary: 'null' },
       },
-      control: { type: 'text' },
+      control: { type: 'number' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',
@@ -99,11 +99,14 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 export const Dark = Template.bind({})
 Dark.args = {
   theme: 'dark',
-  title: 'Tooltip message',
+  content: 'Tooltip message',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   autoAdjustOverflow: true,
-  placement: 'top',
+  placement: {
+    vertical: 'top',
+    horizontal: 'center',
+  },
   mouseEnterDelay: 300,
   zIndex: null,
   className: '',
@@ -112,11 +115,14 @@ Dark.args = {
 export const Light = Template.bind({})
 Light.args = {
   theme: 'light',
-  title: 'Tooltip message',
+  content: 'Tooltip message',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   autoAdjustOverflow: true,
-  placement: 'top',
+  placement: {
+    vertical: 'top',
+    horizontal: 'center',
+  },
   mouseEnterDelay: 300,
   zIndex: null,
   className: '',

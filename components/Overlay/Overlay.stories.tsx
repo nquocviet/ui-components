@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Overlay from '@/components/Overlay'
+import Overlay from './Overlay'
 import Box from '../Box'
 import Typography from '../Typography'
 
@@ -56,7 +56,7 @@ export default {
         type: { summary: 'number | null' },
         defaultValue: { summary: 'null' },
       },
-      control: { type: 'text' },
+      control: { type: 'number' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',

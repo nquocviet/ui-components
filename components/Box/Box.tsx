@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { BoxProps } from './Box.types'
 
-const Box = forwardRef<HTMLDivElement, BoxProps>(
+const Box = forwardRef<HTMLElement, BoxProps>(
   ({ component = 'div', className, ...rest }, ref) => {
     const Element: any = component
 

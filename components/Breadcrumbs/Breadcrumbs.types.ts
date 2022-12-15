@@ -4,7 +4,7 @@ export type BreadcrumbsType = 'text' | 'line'
 
 export type BreadcrumbsSeparator = 'chevron' | 'slash'
 
-export type BreadcrumbsProps = {
+export type BreadcrumbsProps = React.HTMLAttributes<HTMLDivElement> & {
   type?: BreadcrumbsType
   separator?: BreadcrumbsSeparator | ReactNode | 'string'
   maxItems?: number
@@ -12,4 +12,4 @@ export type BreadcrumbsProps = {
   itemsBeforeCollapse?: number
   children: ReactNode[]
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

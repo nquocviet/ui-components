@@ -4,7 +4,7 @@ export type RadioSizes = 'xs' | 'sm' | 'md' | 'lg'
 
 export type RadioThemes = 'light' | 'dark'
 
-export type RadioProps = {
+export type RadioProps = React.HTMLAttributes<HTMLInputElement> & {
   size?: RadioSizes | number
   iconSize?: number
   theme?: RadioThemes
@@ -17,4 +17,4 @@ export type RadioProps = {
   onChange:
     | (() => void)
     | ((event: React.ChangeEvent<HTMLInputElement>) => void)
-} & React.HTMLAttributes<HTMLInputElement>
+}

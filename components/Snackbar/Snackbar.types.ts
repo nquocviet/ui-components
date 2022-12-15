@@ -5,7 +5,7 @@ export type SnackbarPlacements = {
   vertical: 'bottom' | 'top'
 }
 
-export type SnackbarProps = {
+export type SnackbarProps = React.HTMLAttributes<HTMLDivElement> & {
   message: ReactNode
   open?: boolean
   autoHideDuration?: number
@@ -14,4 +14,4 @@ export type SnackbarProps = {
   className?: string
   onClose?: () => void
   onUndo?: () => void
-} & React.HTMLAttributes<HTMLDivElement>
+}

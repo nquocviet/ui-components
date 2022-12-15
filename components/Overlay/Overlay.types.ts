@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 
 export type OverlayRounded = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
-export type OverlayProps = {
+export type OverlayProps = React.HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode
   rounded?: OverlayRounded
   color?: React.CSSProperties['backgroundColor']
@@ -10,4 +10,4 @@ export type OverlayProps = {
   blur?: React.CSSProperties['backdropFilter']
   zIndex?: React.CSSProperties['zIndex'] | null
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

@@ -10,8 +10,15 @@ export type TypographyVariants =
   | 'p'
   | 'span'
   | 'div'
+  | 'header'
 
 export type TypographyAligns = 'center' | 'left' | 'right' | 'justify'
+
+export type TypographyTransforms =
+  | 'none'
+  | 'lowercase'
+  | 'uppercase'
+  | 'capitalize'
 
 export type TypographyWeights =
   | 'light'
@@ -36,13 +43,15 @@ export type TypographyFontSizes =
   | 'display-xl'
   | 'display-2xl'
 
-export type TypographyProps = {
-  children: ReactNode
+export type TypographyProps = React.HTMLAttributes<HTMLElement> & {
+  children?: ReactNode
   variant?: TypographyVariants
   align?: TypographyAligns
   weight?: TypographyWeights
+  transform?: TypographyTransforms
   fontSize?: TypographyFontSizes
   gutter?: boolean
   noWrap?: boolean
+  underline?: boolean
   className?: string
-} & React.HTMLAttributes<HTMLBaseElement>
+}

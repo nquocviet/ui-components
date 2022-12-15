@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { Star } from 'phosphor-react'
 import { styles } from './Rating.styles'
 import { RatingProps } from './Rating.types'
+import { Typography } from '@/components'
 
 const Rating = forwardRef<HTMLDivElement, RatingProps>(
   (
@@ -10,6 +11,7 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
       defaultValue = 0,
       precision = 'full',
       size = 'md',
+      label,
       disabled,
       readOnly,
       max = 5,
@@ -72,7 +74,7 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
             <span
               key={index}
               className={clsx(
-                'inline-flex relative',
+                'relative inline-flex',
                 !readOnly && !disabled && styles.states.default,
                 readOnly && styles.states.readOnly,
                 disabled && styles.states.disabled
@@ -80,7 +82,7 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
             >
               {precision === 'half' && (
                 <span
-                  className='inline-flex items-center justify-center absolute top-0 left-0 w-1/2 h-full'
+                  className='absolute top-0 left-0 inline-flex h-full w-1/2 items-center justify-center'
                   style={{
                     fontSize: `${styles.sizes[size]}px`,
                     color:
@@ -94,7 +96,7 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
                   onMouseEnter={() => onMouseEnter(rateHalf)}
                   onMouseLeave={() => onMouseLeave()}
                 >
-                  <span className='absolute top-0 left-0 w-full h-full overflow-hidden'>
+                  <span className='absolute top-0 left-0 h-full w-full overflow-hidden'>
                     {icon ? (
                       renderIcon(rateHalf)
                     ) : (
@@ -127,6 +129,9 @@ const Rating = forwardRef<HTMLDivElement, RatingProps>(
             </span>
           )
         })}
+        {label && (
+          <Typography className='ml-1 text-gray-500'>{label}</Typography>
+        )}
         {trailing && <div className='ml-4'>{trailing}</div>}
       </div>
     )

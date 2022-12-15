@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Rating from '@/components/Rating'
+import Rating from './Rating'
 
 export default {
   title: 'Design System/Components/Rating',

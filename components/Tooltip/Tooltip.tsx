@@ -1,35 +1,38 @@
 import React, { forwardRef, useState } from 'react'
 import clsx from 'clsx'
-import { AnimatePresence, motion } from 'framer-motion'
+import { Popover } from '@/components'
 import { styles } from './Tooltip.styles'
 import { TooltipProps } from './Tooltip.types'
+import { useWindowEvent } from '@/hooks'
 
 const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
   (
     {
       children,
       theme = 'dark',
-      title,
+      content,
       description,
       autoAdjustOverflow = true,
-      placement = 'top',
+      placement = {
+        vertical: 'top',
+        horizontal: 'center',
+      },
       maxWidth = 320,
       mouseEnterDelay = 300,
       zIndex = null,
       className,
+      containerClassName,
       ...rest
     },
     ref
   ) => {
-    const allClassNames = clsx(
-      styles.base,
-      styles.themes[theme],
-      styles.placements[placement],
-      !zIndex && 'z-sticky',
-      className
-    )
+    const allClassNames = clsx(styles.base, styles.themes[theme], className)
     const [isHovered, setIsHovered] = useState<boolean>(false)
     const [delayHandler, setDelayHandler] = useState<any>(null)
+
+    const handleScroll = () => setIsHovered(false)
+
+    useWindowEvent('scroll', handleScroll, isHovered)
 
     const handleMouseEnter = () => {
       setDelayHandler(
@@ -45,31 +48,25 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
     }
 
     return (
-      <div
-        className='relative'
+      <Popover
+        open={isHovered}
+        placement={placement}
+        popover={
+          <div className='flex flex-col gap-1 text-sm'>
+            <div className='font-semibold'>{content}</div>
+            {description && <div>{description}</div>}
+          </div>
+        }
+        zIndex={zIndex}
+        className={allClassNames}
+        containerClassName={containerClassName}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         ref={ref}
         {...rest}
       >
         {children}
-        <AnimatePresence>
-          {isHovered && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.25 }}
-              className={allClassNames}
-              style={{ maxWidth: `${maxWidth}px`, ...(zIndex && { zIndex }) }}
-            >
-              <div className='flex flex-col gap-1 text-sm'>
-                <div className='font-semibold'>{title}</div>
-                {description && <div>{description}</div>}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      </Popover>
     )
   }
 )

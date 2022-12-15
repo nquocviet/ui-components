@@ -10,9 +10,11 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
   (
     {
       direction = 'row',
-      align = 'center',
-      justify = 'center',
+      align = 'flex-start',
+      justify = 'flex-start',
+      wrap = 'wrap',
       spacing = 16,
+      fluid,
       children,
       className,
       style,
@@ -25,6 +27,8 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
       styles[direction],
       styles['align-' + align],
       styles[justify],
+      styles[wrap],
+      fluid ? 'w-full' : 'w-auto',
       className
     )
 
@@ -32,12 +36,12 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
       const allSpacings = BREAKPOINTS.reduce((prev, curr, index) => {
         const breakpoint = BREAKPOINTS[index - 1]
 
-        if (!spacing[curr]) {
-          if (!spacing[breakpoint]) {
+        if (!spacing[curr] && typeof spacing[curr] !== 'number') {
+          if (!prev[breakpoint] && typeof prev[breakpoint] !== 'number') {
             return { ...prev, [curr]: DEFAULT_SPACING }
           }
 
-          return { ...prev, [curr]: spacing[breakpoint] }
+          return { ...prev, [curr]: spacing[breakpoint] || prev[breakpoint] }
         }
 
         return { ...prev, [curr]: spacing[curr] }
@@ -50,16 +54,18 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
       }, {})
     }
 
+    const stylesComponent = {
+      ...style,
+      ...(typeof spacing === 'number'
+        ? { ['--stack-spacing' as any]: `${spacing}px` }
+        : defineSpacingVariables()),
+    }
+
     return (
       <div
         className={allClassNames}
-        style={{
-          ...(typeof spacing === 'number'
-            ? { ['--stack-spacing' as any]: `${spacing}px` }
-            : defineSpacingVariables()),
-          ...style,
-        }}
         ref={ref}
+        style={stylesComponent}
         {...rest}
       >
         {children}

@@ -13,6 +13,7 @@ const Toggle = forwardRef<HTMLDivElement, ToggleProps>(
       label,
       description,
       className,
+      checked,
       defaultChecked = false,
       disabled = false,
       onChange,
@@ -44,14 +45,14 @@ const Toggle = forwardRef<HTMLDivElement, ToggleProps>(
                 onChange(event)
               }
             }}
-            checked={toggle}
+            checked={typeof checked === 'boolean' ? checked : toggle}
             disabled={disabled}
             {...rest}
           />
           <div className={allClassNames}>
             <div
               className={clsx(
-                'w-toggle-switch h-toggle-switch bg-white rounded-full shadow-sm transition-transform',
+                'h-toggle-switch w-toggle-switch rounded-full bg-white shadow-sm transition-transform',
                 toggle && 'translate-x-full'
               )}
             ></div>
@@ -64,7 +65,7 @@ const Toggle = forwardRef<HTMLDivElement, ToggleProps>(
               styles.fontSizes[size]
             )}
           >
-            {label && <p className='text-gray-700 font-medium'>{label}</p>}
+            {label && <p className='font-medium text-gray-800'>{label}</p>}
             {description && <p className='text-gray-500'>{description}</p>}
           </div>
         )}
