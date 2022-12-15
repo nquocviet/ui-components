@@ -13,7 +13,9 @@ export type AvatarSizes =
   | '4xl'
   | '5xl'
 
-export type AvatarProps = {
+export type AvatarProps = React.HTMLAttributes<
+  HTMLDivElement & HTMLImageElement
+> & {
   variant?: AvatarVariants
   size?: AvatarSizes
   src?: string
@@ -21,4 +23,4 @@ export type AvatarProps = {
   children?: ReactNode
   border?: boolean
   className?: string
-} & React.HTMLAttributes<HTMLDivElement & HTMLImageElement>
+}

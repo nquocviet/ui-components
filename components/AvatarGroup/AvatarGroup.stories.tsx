@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Avatar from '@/components/Avatar'
-import AvatarGroup from '@/components/AvatarGroup'
+import AvatarGroup from './AvatarGroup'
+import Avatar from '../Avatar'
 
 export default {
   title: 'Design System/Components/AvatarGroup',

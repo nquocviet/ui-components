@@ -1,7 +1,19 @@
 .stack {
   --stack-spacing: var(--xs-stack-spacing);
   display: flex;
+  gap: var(--stack-spacing);
+}
+
+.wrap {
   flex-wrap: wrap;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
 }
 
 .row {
@@ -64,29 +76,13 @@
   align-items: baseline;
 }
 
-.row > *:not(:last-child) {
-  margin-right: var(--stack-spacing);
-}
-
-.row-reverse > *:not(:first-child) {
-  margin-right: var(--stack-spacing);
-}
-
-.column > *:not(:last-child) {
-  margin-bottom: var(--stack-spacing);
-}
-
-.column-reverse > *:not(:first-child) {
-  margin-bottom: var(--stack-spacing);
-}
-
-@media screen and (min-width: 536px) {
+@media screen and (min-width: 640px) {
   .stack {
     --stack-spacing: var(--sm-stack-spacing);
   }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
   .stack {
     --stack-spacing: var(--md-stack-spacing);
   }

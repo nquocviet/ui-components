@@ -1,5 +1,5 @@
 export const styles = {
-  base: 'inline-flex child:shrink-0',
+  base: 'inline-flex items-center child:shrink-0',
   states: {
     default:
       'transition-transform duration-200 child:cursor-pointer hover:scale-[1.2]',
@@ -7,8 +7,9 @@ export const styles = {
     disabled: 'opacity-40 child:cursor-not-allowed',
   },
   sizes: {
-    sm: 18,
-    md: 24,
-    lg: 30,
+    sm: 16,
+    md: 20,
+    lg: 24,
+    xl: 30,
   },
 }

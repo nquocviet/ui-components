@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Breadcrumbs from '@/components/Breadcrumbs'
+import Breadcrumbs from './Breadcrumbs'
 import Typography from '../Typography'
 import { House } from 'phosphor-react'
 

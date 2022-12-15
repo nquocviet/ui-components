@@ -17,7 +17,7 @@ export type GridJustify =
 
 export type GridSizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
-export type GridProps = {
+export type GridProps = React.HTMLAttributes<HTMLDivElement> & {
   align?: GridAlignment
   justify?: GridJustify
   row?: boolean
@@ -31,4 +31,4 @@ export type GridProps = {
   xs?: GridSizes
   children: ReactNode | ReactNode[]
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

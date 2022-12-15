@@ -9,17 +9,20 @@ export type PaginationVariants =
 
 export type PaginationShapes = 'circular' | 'rounded'
 
-export type PaginationProps = {
+export type PaginationPaddings = 'none' | 'sm' | 'md' | 'lg'
+
+export type PaginationProps = React.HTMLAttributes<HTMLDivElement> & {
   variant?: PaginationVariants
   shape?: PaginationShapes
+  padding?: PaginationPaddings
   currentPage: number
   totalPages: number
   offset?: number
-  border?: boolean
+  withBorder?: boolean
   disabled?: boolean
   responsive?: boolean
   hideNextButton?: boolean
   hidePrevButton?: boolean
   className?: string
   onChange: (page: number) => void
-} & React.HTMLAttributes<HTMLDivElement>
+}

@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Input from '@/components/Input'
+import Input from './Input'
 import { EnvelopeSimple, User, Copy } from 'phosphor-react'
 
 const icons = {

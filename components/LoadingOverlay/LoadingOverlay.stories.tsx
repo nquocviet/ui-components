@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import LoadingOverlay from '@/components/LoadingOverlay'
-import { Box, Button, Paper, Stack } from '..'
+import { Box, Button, LoadingOverlay, Paper, Stack } from '@/components'
 import { useToggle } from '@/hooks'
 
 export default {
@@ -63,7 +62,7 @@ export default {
         type: { summary: 'number | null' },
         defaultValue: { summary: 'null' },
       },
-      control: { type: 'text' },
+      control: { type: 'number' },
     },
     zIndex: {
       description: 'Config z-index of component.',
@@ -71,7 +70,7 @@ export default {
         type: { summary: 'number | null' },
         defaultValue: { summary: 'null' },
       },
-      control: { type: 'text' },
+      control: { type: 'number' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',
@@ -100,7 +99,7 @@ const Template: ComponentStory<typeof LoadingOverlay> = (arg) => {
           <Paper
             className='relative flex items-center justify-center'
             style={{ width: '300px', height: '300px' }}
-            hasBorder
+            withBorder
           >
             Content inside
           </Paper>

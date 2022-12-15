@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { CaretUp, CaretDown, Check } from 'phosphor-react'
 import { useOnClickOutside } from '@/hooks'
-import { Checkbox, Typography, Tag } from '..'
+import { Checkbox, Typography, Tag } from '@/components'
 import { styles } from './Select.styles'
 import { OptionType, SelectProps } from './Select.types'
 
@@ -11,7 +11,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     {
       options,
       size = 'sm',
-      defaultOption,
+      defaultValue,
       label,
       name,
       placeholder = 'Select option',
@@ -32,7 +32,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
   ) => {
     const [optionSelected, setOptionSelected] = useState<
       OptionType | OptionType[] | {}
-    >(defaultOption ? defaultOption : multiple ? [] : {})
+    >(multiple ? [] : {})
     const [showOptions, setShowOptions] = useState<boolean>(false)
     const selectRef = useRef(null)
     const allClassNames = clsx(
@@ -51,6 +51,32 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const handleClose = () => setShowOptions(false)
 
     useOnClickOutside(selectRef, handleClose)
+
+    useEffect(() => {
+      if (!defaultValue) return
+
+      if (multiple) {
+        const optionsSelected = options.filter(({ value }) =>
+          Array.isArray(defaultValue)
+            ? defaultValue.find((defaultVal) => defaultVal === value)
+            : defaultValue === value
+        )
+        const values = optionsSelected?.map(({ value }) => value)
+
+        setOptionSelected(optionsSelected)
+        onChange && onChange(values || [])
+        return
+      }
+
+      const optionSelected = options.find(
+        (option) => option.value === defaultValue
+      )
+
+      if (!optionSelected) return
+
+      setOptionSelected(optionSelected)
+      onChange && onChange(optionSelected?.value || '')
+    }, [defaultValue])
 
     useEffect(() => {
       const clearDropdown = (event) => {
@@ -79,25 +105,26 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         const newValues = newOptions.map(({ value }) => value)
 
         setOptionSelected(newOptions)
-        onChange && onChange(newValues)
+        onChange && onChange(newValues || [])
       } else {
         handleClose()
         setOptionSelected(option)
-        onChange && onChange(option)
+        onChange && onChange(option?.value || '')
       }
     }
 
     return (
       <div className='relative' ref={selectRef}>
-        <div className='flex justify-between items-center mb-1.5'>
+        <div className='mb-1.5 flex items-center justify-between'>
           {label && (
             <Typography
               weight='medium'
               fontSize='text-md'
-              className='text-gray-700'
+              className='cursor-default text-gray-800'
+              onClick={() => setShowOptions(true)}
             >
               {label}
-              {required && <span className='text-red-500 ml-0.5'>*</span>}
+              {required && <span className='ml-0.5 text-red-500'>*</span>}
             </Typography>
           )}
         </div>
@@ -107,7 +134,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           onFocus={() => !disabled && setShowOptions(true)}
         >
           <input
-            className='w-full absolute bottom-0 left-0 opacity-0 pointer-events-none'
+            className='pointer-events-none absolute bottom-0 left-0 w-full opacity-0'
             type='text'
             ref={ref}
             name={name}
@@ -156,11 +183,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           {trailing && (
             <span className={styles.trailing[size]}>{trailing}</span>
           )}
-          <button
-            type='button'
-            className={styles.trailing[size]}
-            onClick={() => setShowOptions((prevState) => !prevState)}
-          >
+          <button type='button' className={styles.trailing[size]}>
             {showOptions ? <CaretUp size={20} /> : <CaretDown size={20} />}
           </button>
         </div>
@@ -171,7 +194,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
           )}
         >
           <ul className='overflow-auto' style={{ maxHeight: `${maxHeight}px` }}>
-            {options &&
+            {options && options.length ? (
               options.map(({ value, label }) => {
                 const isSelected = multiple
                   ? _optionsSelected.some((option) => option.value === value)
@@ -181,7 +204,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
                   <li
                     key={value}
                     className={clsx(
-                      'flex justify-between items-center cursor-pointer transition-colors duration-200',
+                      'flex cursor-pointer items-center justify-between transition-colors duration-200',
                       styles.sizes[size],
                       isSelected ? 'bg-gray-50' : 'hover:bg-gray-100'
                     )}
@@ -206,7 +229,10 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
                     )}
                   </li>
                 )
-              })}
+              })
+            ) : (
+              <Typography className='px-3 py-2'>There is no options</Typography>
+            )}
           </ul>
         </div>
         {error && (

@@ -12,7 +12,7 @@ export type ChipColors =
   | 'warning'
   | 'success'
 
-export type ChipProps = {
+export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   variant?: ChipVariants
   size?: ChipSizes
   color?: ChipColors
@@ -22,4 +22,4 @@ export type ChipProps = {
   rounded?: boolean
   className?: string
   onDelete?: () => void
-} & React.HTMLAttributes<HTMLDivElement>
+}

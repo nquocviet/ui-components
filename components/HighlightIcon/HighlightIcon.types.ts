@@ -10,9 +10,9 @@ export type HighlightIconColors =
   | 'warning'
   | 'success'
 
-export type HighlightIconProps = {
+export type HighlightIconProps = React.HTMLAttributes<HTMLDivElement> & {
   color?: HighlightIconColors
   size?: HighlightIconSizes
-  icon: ReactElement
+  icon: React.ElementType
   className?: string
-} & React.HTMLAttributes<HTMLDivElement>
+}

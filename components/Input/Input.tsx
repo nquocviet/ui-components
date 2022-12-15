@@ -5,8 +5,6 @@ import { styles } from './Input.styles'
 import { InputProps } from './Input.types'
 import Typography from '../Typography'
 
-const MAX_LENGTH_INPUT = 255
-
 const Input = forwardRef<HTMLLabelElement, InputProps>(
   (
     {
@@ -17,12 +15,15 @@ const Input = forwardRef<HTMLLabelElement, InputProps>(
       placeholder,
       error,
       hint,
-      maxLength = MAX_LENGTH_INPUT,
       required = false,
       disabled = false,
+      noStyle,
+      readOnly,
       leading,
       trailing,
       className,
+      containerClassName,
+      style,
       ...rest
     },
     ref
@@ -34,20 +35,32 @@ const Input = forwardRef<HTMLLabelElement, InputProps>(
         : disabled
         ? styles.states.disabled
         : styles.states.enabled,
+      readOnly && 'focus-within:!border-gray-300',
       className
     )
     const [showPassword, setShowPassword] = useState<boolean>(false)
     const isInputPassword = type === 'password'
+    const isInputNumber = type === 'number'
+    const numberInputInvalidChars = ['-', '+', '.', 'e', 'E']
+
+    if (noStyle) {
+      return <input type={type} className={className} {...rest} />
+    }
 
     return (
-      <label className='block w-full' ref={ref}>
+      <label
+        className={clsx('block', containerClassName)}
+        style={{ ...style }}
+        ref={ref}
+      >
         {label && (
           <Typography
-            fontSize='text-sm'
-            className='mb-1.5 font-medium text-gray-700'
+            fontSize='text-md'
+            weight='medium'
+            className='mb-1.5 text-gray-800'
           >
             {label}
-            {required && <span className='text-red-500 ml-0.5'>*</span>}
+            {required && <span className='ml-0.5 text-red-500'>*</span>}
           </Typography>
         )}
         <div className={allClassNames}>
@@ -64,14 +77,23 @@ const Input = forwardRef<HTMLLabelElement, InputProps>(
               : { type: 'password' })}
             {...(!isInputPassword && { type: type })}
             className={clsx(
-              'w-full border-none bg-transparent outline-none text-gray-700 placeholder:text-gray-500',
-              styles.sizes[size]
+              'w-full border-none bg-transparent text-gray-800 outline-none placeholder:text-gray-400',
+              styles.sizes[size],
+              readOnly && 'cursor-default'
             )}
-            maxLength={maxLength}
             spellCheck='false'
             placeholder={placeholder}
             name={name}
             disabled={disabled}
+            readOnly={readOnly}
+            {...(isInputNumber && {
+              min: 0,
+              onKeyDown: (e) => {
+                if (numberInputInvalidChars.includes(e.key)) {
+                  e.preventDefault()
+                }
+              },
+            })}
             {...rest}
           />
           {trailing && (

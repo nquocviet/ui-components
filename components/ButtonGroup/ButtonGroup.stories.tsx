@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import ButtonGroup from '@/components/ButtonGroup'
-import Button from '@/components/Button'
+import ButtonGroup from './ButtonGroup'
+import Button from '../Button'
 
 export default {
   title: 'Design System/Components/ButtonGroup',

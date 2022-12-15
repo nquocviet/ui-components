@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import HighlightIcon from '@/components/HighlightIcon'
+import HighlightIcon from './HighlightIcon'
 import { Lightbulb } from 'phosphor-react'
 
 export default {
@@ -59,7 +59,7 @@ export const Primary = Template.bind({})
 Primary.args = {
   color: 'primary',
   size: 'md',
-  icon: <Lightbulb />,
+  icon: Lightbulb,
   className: '',
 }
 
@@ -67,7 +67,7 @@ export const Gray = Template.bind({})
 Gray.args = {
   color: 'gray',
   size: 'md',
-  icon: <Lightbulb />,
+  icon: Lightbulb,
   className: '',
 }
 
@@ -75,7 +75,7 @@ export const Info = Template.bind({})
 Info.args = {
   color: 'info',
   size: 'md',
-  icon: <Lightbulb />,
+  icon: Lightbulb,
   className: '',
 }
 
@@ -83,7 +83,7 @@ export const Error = Template.bind({})
 Error.args = {
   color: 'error',
   size: 'md',
-  icon: <Lightbulb />,
+  icon: Lightbulb,
   className: '',
 }
 
@@ -91,7 +91,7 @@ export const Warning = Template.bind({})
 Warning.args = {
   color: 'warning',
   size: 'md',
-  icon: <Lightbulb />,
+  icon: Lightbulb,
   className: '',
 }
 
@@ -99,6 +99,6 @@ export const Success = Template.bind({})
 Success.args = {
   color: 'success',
   size: 'md',
-  icon: <Lightbulb />,
+  icon: Lightbulb,
   className: '',
 }

@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Grid from '@/components/Grid'
-import Box from '@/components/Box'
+import Grid from './Grid'
+import Box from '../Box'
 
 export default {
   title: 'Design System/Components/Grid',

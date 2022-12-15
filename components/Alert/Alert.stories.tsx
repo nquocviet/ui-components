@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Alert from '@/components/Alert'
+import Alert from './Alert'
 
 export default {
   title: 'Design System/Components/Alert',
@@ -97,7 +97,7 @@ export default {
         type: { summary: 'number' },
         defaultValue: { summary: 0 },
       },
-      control: { type: 'text' },
+      control: { type: 'number' },
     },
     placement: {
       description:
@@ -117,7 +117,7 @@ export default {
         type: { summary: 'number | null' },
         defaultValue: { summary: 'null' },
       },
-      control: { type: 'text' },
+      control: { type: 'number' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',

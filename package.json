@@ -6,7 +6,8 @@
     "start": "next start",
     "type-check": "tsc",
     "storybook": "start-storybook -p 6006 --no-manager-cache",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
     "next": "latest",

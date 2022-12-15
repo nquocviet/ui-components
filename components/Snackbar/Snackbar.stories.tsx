@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import Snackbar from '@/components/Snackbar'
+import Snackbar from './Snackbar'
 import Button from '../Button'
 
 export default {
@@ -57,7 +57,7 @@ export default {
         type: { summary: 'number | null' },
         defaultValue: { summary: 'null' },
       },
-      control: { type: 'text' },
+      control: { type: 'number' },
     },
     className: {
       description: 'Override or extend the styles applied to the component.',

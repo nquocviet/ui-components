@@ -1,12 +1,13 @@
 import clsx from 'clsx'
 import { X } from 'phosphor-react'
 import React, { forwardRef } from 'react'
-import Checkbox from '../Checkbox'
+import { Checkbox } from '@/components'
 import { styles } from './Tag.styles'
 import { TagProps } from './Tag.types'
 import { CheckboxSizes } from '../Checkbox/Checkbox.types'
+import Link from 'next/link'
 
-const Tag = forwardRef<HTMLSpanElement, TagProps>(
+const Tag = forwardRef<HTMLSpanElement & HTMLAnchorElement, TagProps>(
   (
     {
       action = 'text',
@@ -14,6 +15,7 @@ const Tag = forwardRef<HTMLSpanElement, TagProps>(
       size = 'md',
       label,
       count,
+      href = '',
       hasCheckbox = false,
       className,
       onClose,
@@ -23,6 +25,27 @@ const Tag = forwardRef<HTMLSpanElement, TagProps>(
     ref
   ) => {
     const allClassNames = clsx(styles.base, styles.sizes[size], className)
+
+    if (rest.as === 'a') {
+      return (
+        <Link href={href}>
+          <a className={allClassNames} ref={ref} {...rest}>
+            {label}
+            {action === 'count' && (
+              <span
+                className={clsx(
+                  'rounded bg-gray-100 text-gray-800',
+                  styles.countSizes[size],
+                  styles.trailing[size]
+                )}
+              >
+                {count}
+              </span>
+            )}
+          </a>
+        </Link>
+      )
+    }
 
     return (
       <span className={allClassNames} ref={ref} {...rest}>
@@ -47,7 +70,7 @@ const Tag = forwardRef<HTMLSpanElement, TagProps>(
         {action === 'count' && (
           <span
             className={clsx(
-              'bg-gray-100 text-gray-700 rounded',
+              'rounded bg-gray-100 text-gray-800',
               styles.countSizes[size],
               styles.trailing[size]
             )}

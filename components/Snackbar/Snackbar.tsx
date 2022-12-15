@@ -61,12 +61,12 @@ const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
           onMouseEnter={() => setPause(true)}
           onMouseLeave={() => setPause(false)}
         >
-          <div className='font-semibold py-1.5 flex-1'>{message}</div>
-          <div className='flex items-center -mb-0.5 -mr-1.5'>
+          <div className='flex-1 py-1.5 font-semibold'>{message}</div>
+          <div className='-mb-0.5 -mr-1.5 flex items-center'>
             {onUndo && (
               <button
                 type='button'
-                className='ml-1 p-1.5 text-primary-400 font-semibold uppercase'
+                className='ml-1 p-1.5 font-semibold uppercase text-primary-400'
                 onClick={() => {
                   onUndo()
                   onClose && onClose()
@@ -76,11 +76,7 @@ const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
               </button>
             )}
             {onClose && (
-              <button
-                type='button'
-                className='ml-1 p-1.5'
-                onClick={() => onClose()}
-              >
+              <button type='button' className='ml-1 p-1.5' onClick={onClose}>
                 <X size={20} />
               </button>
             )}

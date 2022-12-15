@@ -1,8 +1,8 @@
 import React, { forwardRef, useState } from 'react'
 import clsx from 'clsx'
-import { Typography } from '..'
 import { styles } from './Textarea.styles'
 import { TextareaProps } from './Textarea.types'
+import { Typography } from '@/components'
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
@@ -63,16 +63,16 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           <Typography
             weight='medium'
             fontSize='text-md'
-            className='mb-1.5 text-gray-700'
+            className='mb-1.5 text-gray-800'
           >
             {label}
-            {required && <span className='text-red-500 ml-0.5'>*</span>}
+            {required && <span className='ml-0.5 text-red-500'>*</span>}
           </Typography>
         )}
         <div className={allClassNames}>
           <textarea
             className={clsx(
-              'w-full border-none bg-transparent outline-none text-gray-700 resize-none placeholder:text-gray-400',
+              'w-full resize-none border-none bg-transparent text-gray-800 outline-none placeholder:text-gray-400',
               styles.sizes[size]
             )}
             autoComplete='off'

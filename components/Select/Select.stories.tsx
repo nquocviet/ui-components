@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import Select from '@/components/Select'
+import Select from './Select'
 
 export default {
   title: 'Design System/Components/Select',

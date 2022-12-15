@@ -2,9 +2,9 @@ import { ChangeEvent } from 'react'
 
 export type TextareaSizes = 'sm' | 'md'
 
-export type TextareaProps = {
+export type TextareaProps = React.HTMLAttributes<HTMLTextAreaElement> & {
   size?: TextareaSizes
-  name: string
+  name?: string
   label?: string
   value?: string
   placeholder?: string
@@ -17,4 +17,4 @@ export type TextareaProps = {
   rows?: number
   onBlur?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
   onChange?: (() => void) | ((event: ChangeEvent<HTMLTextAreaElement>) => void)
-} & React.HTMLAttributes<HTMLTextAreaElement>
+}

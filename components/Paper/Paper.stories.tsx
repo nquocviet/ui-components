@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Paper from '@/components/Paper'
+import Paper from './Paper'
 
 export default {
   title: 'Design System/Components/Paper',
@@ -72,5 +72,5 @@ Example.args = {
   shadow: 'md',
   rounded: 'md',
   padding: 'md',
-  hasBorder: false,
+  withBorder: false,
 }

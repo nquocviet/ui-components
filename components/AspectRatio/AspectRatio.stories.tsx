@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import AspectRatio from '@/components/AspectRatio'
+import AspectRatio from './AspectRatio'
 import Box from '../Box'
 
 export default {
@@ -40,8 +40,8 @@ export default {
 } as ComponentMeta<typeof AspectRatio>
 
 const Template: ComponentStory<typeof AspectRatio> = (arg) => (
-  <AspectRatio ratio={16 / 9} className='w-1/2' {...arg}>
-    <Box className='bg-primary-200'>
+  <AspectRatio ratio={16 / 9} className='w-1/3' {...arg}>
+    <Box className='bg-primary-200 flex justify-center items-center'>
       &#60;AspectRatio ratio=&#123;16 / 9&#125; /&#62;
     </Box>
   </AspectRatio>
